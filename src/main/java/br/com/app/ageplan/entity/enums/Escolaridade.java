@@ -1,7 +1,6 @@
 package br.com.app.ageplan.entity.enums;
 
 
-
 public enum Escolaridade {
 
     FUNDAMENTAL_INCOMPLETO("Fundamental Incompleto"),

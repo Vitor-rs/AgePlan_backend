@@ -15,5 +15,6 @@ public enum NivelEscolaridade {
     SEGUNDO_ANO_MEDIO("2º ano do ensino médio"),
     TERCEIRO_ANO_MEDIO("3º ano do ensino médio");
 
-    NivelEscolaridade(String descricao) {}
+    NivelEscolaridade(String descricao) {
+    }
 }

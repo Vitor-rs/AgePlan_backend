@@ -4,9 +4,9 @@ import br.com.app.ageplan.dto.PessoaDto;
 import br.com.app.ageplan.entity.Pessoa;
 import br.com.app.ageplan.repository.PessoaRepository;
 import br.com.app.ageplan.service.exception.ResourceNotFoundException;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -72,7 +72,7 @@ public class PessoaService {
 
         } catch (ResourceNotFoundException e) {
 
-            throw new ResourceNotFoundException("O registro solicitado de ID "+id+" não foi localizado.");
+            throw new ResourceNotFoundException("O registro solicitado de ID " + id + " não foi localizado.");
 
         }
     }
@@ -84,7 +84,7 @@ public class PessoaService {
                 repository.deleteById(id);
             }
         } catch (ResourceNotFoundException e) {
-            throw new ResourceNotFoundException("O registro solicitado de ID "+id+" não foi localizado.");
+            throw new ResourceNotFoundException("O registro solicitado de ID " + id + " não foi localizado.");
         }
     }
 

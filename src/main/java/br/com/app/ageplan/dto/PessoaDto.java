@@ -17,10 +17,14 @@ public class PessoaDto implements Serializable {
 
     /*------------------------------------------------------------*/
     /* Construtor padrão */
-    public PessoaDto() {}
+    public PessoaDto() {
+    }
 
     /*------------------------------------------------------------*/
-    /** Construtor com parâmetros */
+
+    /**
+     * Construtor com parâmetros
+     */
     public PessoaDto(Long id, String nome, String dataNascimento, String CPF) {
         this.id = id;
         this.nome = nome;
@@ -39,13 +43,36 @@ public class PessoaDto implements Serializable {
 
     /*------------------------------------------------------------*/
     /* Getters e Setters */
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    public String getDataNascimento() { return dataNascimento; }
-    public void setDataNascimento(String dataNascimento) { this.dataNascimento = dataNascimento; }
-    public String getCPF() { return CPF; }
-    public void setCPF(String CPF) { this.CPF = CPF; }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
 
 }
