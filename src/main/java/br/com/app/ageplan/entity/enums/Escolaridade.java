@@ -1,8 +1,7 @@
 package br.com.app.ageplan.entity.enums;
 
-import lombok.Getter;
 
-@Getter
+
 public enum Escolaridade {
 
     FUNDAMENTAL_INCOMPLETO("Fundamental Incompleto"),
@@ -22,6 +21,10 @@ public enum Escolaridade {
 
     Escolaridade(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String toString() {
+        return descricao;
     }
 
 }
