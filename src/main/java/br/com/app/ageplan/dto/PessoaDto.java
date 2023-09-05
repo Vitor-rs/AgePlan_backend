@@ -7,6 +7,12 @@ import java.io.Serial;
 import java.io.Serializable;
 
 public class PessoaDto implements Serializable {
+    /* As vezes algumas IDEs alertam o uso do Lombok @Getter, pois o mesmo pode ser substituído por um método
+     * getNomeDaVariavel() e o mesmo pode ser gerado automaticamente pelo IDE, mas o Lombok é uma ferramenta
+     * que facilita o desenvolvimento, pois ele gera automaticamente os métodos getters e setters, além de
+     * outros métodos que podem ser úteis, como o toString(), equals(), hashCode() e etc.
+    * */
+
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -14,6 +20,7 @@ public class PessoaDto implements Serializable {
     private String nome;
     private String dataNascimento;
     private String CPF;
+    private String RG;
 
     /*------------------------------------------------------------*/
     /* Construtor padrão */
@@ -21,7 +28,6 @@ public class PessoaDto implements Serializable {
     }
 
     /*------------------------------------------------------------*/
-
     /**
      * Construtor com parâmetros
      */
@@ -73,6 +79,14 @@ public class PessoaDto implements Serializable {
 
     public void setCPF(String CPF) {
         this.CPF = CPF;
+    }
+
+    public String getRG() {
+        return RG;
+    }
+
+    public void setRG(String RG) {
+        this.RG = RG;
     }
 
 }
