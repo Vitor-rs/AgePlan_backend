@@ -1,0 +1,33 @@
+@startuml
+
+abstract class Pessoa {
+    - id: Long
+    - nomeCompleto: String
+    - dataNascimento: Date
+    - CPF: String
+    - RG: String
+    - genero: String
+    - email: String
+    - telefoneCelular: String
+    - telefoneFixo: String
+    - endereco: String
+    - estrangeiro: Boolean
+    -dadoAcademico: DadoAcademico
+    -dadoProfissional: DadoProfissional
+}
+
+class DadoAcademico {
+    - NivelEscolaridade: NivelEscolaridade
+    - Escolaridade: Escolaridade
+    - OrgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
+}
+
+class DadoProfissional {
+    - NivelEscolaridade: NivelEscolaridade
+    - Escolaridade: Escolaridade
+    - OrgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
+}
+
+
+
+@enduml

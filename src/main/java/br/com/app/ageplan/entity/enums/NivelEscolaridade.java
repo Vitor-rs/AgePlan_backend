@@ -2,6 +2,8 @@ package br.com.app.ageplan.entity.enums;
 
 public enum NivelEscolaridade {
 
+    CRECHE("Creche"),
+    PRE_ESCOLA("Pré-escola"),
     PRIMEIRO_ANO_FUNDAMENTAL("1º ano do ensino fundamental"),
     SEGUNDO_ANO_FUNDAMENTAL("2º ano do ensino fundamental"),
     TERCEIRO_ANO_FUNDAMENTAL("3º ano do ensino fundamental"),

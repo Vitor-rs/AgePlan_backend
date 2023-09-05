@@ -3,6 +3,7 @@ package br.com.app.ageplan.entity.enums;
 
 public enum Escolaridade {
 
+    PRE_ESCOLAR("Pré-Escolar"),
     FUNDAMENTAL_INCOMPLETO("Fundamental Incompleto"),
     FUNDAMENTAL_COMPLETO("Fundamental Completo"),
     MEDIO_INCOMPLETO("Médio Incompleto"),
