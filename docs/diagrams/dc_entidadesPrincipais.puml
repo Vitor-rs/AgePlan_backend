@@ -12,8 +12,8 @@ abstract class Pessoa {
     - telefoneFixo: String
     - endereco: String
     - estrangeiro: Boolean
-    -dadoAcademico: DadoAcademico
-    -dadoProfissional: DadoProfissional
+    - dadoAcademico: DadoAcademico
+    - dadoProfissional: DadoProfissional
 }
 
 class DadoAcademico {

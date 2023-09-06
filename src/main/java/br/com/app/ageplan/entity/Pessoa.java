@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@MappedSuperclass
 @Table(name = "tb_pessoa")
 public class Pessoa implements Serializable {
     /**
@@ -17,11 +18,12 @@ public class Pessoa implements Serializable {
     private static final long serialVersionUID = 1L;
     /*------------------------------------------------------------*/
     /**
-     * Este atributo ID é gerado automaticamente pelo banco de dados e não pode ser nulo.
-     * O GenerationType.IDENTITY é usado para gerar automaticamente o valor do ID.
+     * O atributo "id" é a chave primária da tabela "tb_pessoa". Usa-se a anotação GenerationType.SEQUENCE
+     * para gerar o valor da chave primária. O atributo "generator" é usado para especificar o nome da
+     * sequência que será usada para gerar o valor da chave primária
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pessoa_sequence")
     @Column(name = "id", nullable = false)
     private Long id;
     /*------------------------------------------------------------*/
