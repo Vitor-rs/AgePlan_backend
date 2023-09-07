@@ -17,13 +17,13 @@ abstract class Pessoa {
 }
 
 class DadoAcademico {
-    - NivelEscolaridade: NivelEscolaridade
-    - Escolaridade: Escolaridade
-    - OrgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
+    - nivelSerieEscolaridade: NivelSerieEscolaridade
+    - escolaridade: Escolaridade
+    - orgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
 }
 
 class DadoProfissional {
-    - NivelEscolaridade: NivelEscolaridade
+    - nivelSerieEscolaridade: NivelSerieEscolaridade
     - Escolaridade: Escolaridade
     - OrgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
 }

@@ -1,7 +1,7 @@
 package br.com.app.ageplan.service;
 
-import br.com.app.ageplan.dto.PessoaDto;
 import br.com.app.ageplan.entity.Pessoa;
+import br.com.app.ageplan.entity.PessoaDto;
 import br.com.app.ageplan.repository.PessoaRepository;
 import br.com.app.ageplan.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class PessoaService {
      * mais instanciar PessoaRepository usando new PessoaRepository(). O Spring faz isso automaticamente. Algumas IDEs
      * alertam que essa ingeção de dependência não é necessária, mas ela é necessária sim. Se você não fizer isso,
      * o atributo repository vai ser null e vai dar erro de NullPointerException quando você tentar usar o atributo.
-    */
+     */
     @Autowired
     private PessoaRepository repository;
 
@@ -54,7 +54,7 @@ public class PessoaService {
 
         Pessoa entity = new Pessoa();
 
-        entity.setNome(dto.getNome());
+        entity.setNomeCompleto(dto.getNomeCompleto());
         entity.setDataNascimento(dto.getDataNascimento());
         entity.setCPF(dto.getCPF());
         entity.setRG(dto.getRG());
@@ -70,7 +70,7 @@ public class PessoaService {
         try {
             Pessoa entity = repository.getReferenceById(id);
 
-            entity.setNome(dto.getNome());
+            entity.setNomeCompleto(dto.getNomeCompleto());
             entity.setDataNascimento(dto.getDataNascimento());
             entity.setCPF(dto.getCPF());
             entity.setRG(dto.getRG());

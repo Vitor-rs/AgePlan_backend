@@ -19,4 +19,4 @@ public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
  * que foi passada como parâmetro, neste caso, a entidade Pessoa. Ou seja, não é
  * necessário criar os métodos de CRUD, o Spring Data JPA cria automaticamente. É uma técnica de criar
  * SQL scripts automaticamente, sem a necessidade de escrever os scripts manualmente.
-* */
+ * */

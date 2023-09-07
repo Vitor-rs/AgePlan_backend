@@ -5,7 +5,8 @@ import jakarta.persistence.Id;
 import java.io.Serial;
 import java.io.Serializable;
 
-public class OrgaoInstituicaoEmpresa implements Serializable {
+
+public class NivelSerieEscolaridade implements Serializable {
     @Serial
     private final static long serialVersionUID = 1L;
     /*--------------------------------------------------------*/

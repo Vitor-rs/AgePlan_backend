@@ -1,67 +1,49 @@
 package br.com.app.ageplan.entity;
 
-import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
-@Entity
-@Table(name = "tb_pessoa")
-public class Pessoa implements Serializable {
+/**
+ * DTO para {@link Pessoa}
+ */
+
+public class PessoaDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    /*----------------------------------------------------------*/
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    /*----------------------------------------------------------*/
-    // Dados Pessoais
-
-    private String nomeCompleto;
-    private String dataNascimento;
-    private String genero;
-    private Boolean estrangeiro;
-    /*----------------------------------------------------------*/
-    // Documentos
-    private String CPF;
-    private String RG;
-    private String outrosDocumentos;
-    /*----------------------------------------------------------*/
-    // Comunicação
-    private String email;
-    private String telefonecelular;
-    private String telefoneFixo;
-    /*----------------------------------------------------------*/
-    // Endereço
-    @ManyToOne
-    @JoinColumn(name = "endereco_id")
-    private Endereco endereco;
-    /*----------------------------------------------------------*/
-    // Dados Acadêmicos e Profissionais
-    private Escolaridade escolaridade;
-    private NivelSerieEscolaridade nivelSerieEscolaridade;
-    private ProfissaoCargoFuncao profissaoCargoFuncao;
-    private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
+    Long id;
+    String nomeCompleto;
+    String dataNascimento;
+    String genero;
+    Boolean estrangeiro;
+    String CPF;
+    String RG;
+    String outrosDocumentos;
+    String email;
+    String telefonecelular;
+    String telefoneFixo;
+    Endereco endereco;
+    Escolaridade escolaridade;
+    NivelSerieEscolaridade nivelSerieEscolaridade;
+    ProfissaoCargoFuncao profissaoCargoFuncao;
+    OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 
     /*----------------------------------------------------------*/
-    // Construtor sem argumentos ou vazio
-    public Pessoa() {
+    // Construtor sem argumentos
+    public PessoaDto() {
     }
     /*----------------------------------------------------------*/
     // Construtor com argumentos
 
-
-    public Pessoa(
-            Long id,
-            String nomeCompleto, String dataNascimento, String genero, Boolean estrangeiro,
-            String CPF, String RG, String outrosDocumentos,
-            String email, String telefonecelular, String telefoneFixo,
-            Endereco endereco,
-            Escolaridade escolaridade,
-            NivelSerieEscolaridade nivelSerieEscolaridade,
-            ProfissaoCargoFuncao profissaoCargoFuncao,
-            OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
+    public PessoaDto(Long id,
+                     String nomeCompleto, String dataNascimento, String genero, Boolean estrangeiro,
+                     String CPF, String RG, String outrosDocumentos,
+                     String email, String telefonecelular, String telefoneFixo,
+                     Endereco endereco,
+                     Escolaridade escolaridade,
+                     NivelSerieEscolaridade nivelSerieEscolaridade,
+                     ProfissaoCargoFuncao profissaoCargoFuncao,
+                     OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -78,6 +60,28 @@ public class Pessoa implements Serializable {
         this.nivelSerieEscolaridade = nivelSerieEscolaridade;
         this.profissaoCargoFuncao = profissaoCargoFuncao;
         this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
+    }
+
+    /*----------------------------------------------------------*/
+    // Construtor usando o objeto Pessoa
+
+    public PessoaDto(Pessoa entity) {
+        id = entity.getId();
+        nomeCompleto = entity.getNomeCompleto();
+        dataNascimento = entity.getDataNascimento();
+        genero = entity.getGenero();
+        estrangeiro = entity.getEstrangeiro();
+        CPF = entity.getCPF();
+        RG = entity.getRG();
+        outrosDocumentos = entity.getOutrosDocumentos();
+        email = entity.getEmail();
+        telefonecelular = entity.getTelefonecelular();
+        telefoneFixo = entity.getTelefoneFixo();
+        endereco = entity.getEndereco();
+        escolaridade = entity.getEscolaridade();
+        nivelSerieEscolaridade = entity.getNivelSerieEscolaridade();
+        profissaoCargoFuncao = entity.getProfissaoCargoFuncao();
+        orgaoInstituicaoEmpresa = entity.getOrgaoInstituicaoEmpresa();
     }
 
     /*----------------------------------------------------------*/
@@ -213,46 +217,5 @@ public class Pessoa implements Serializable {
     }
 
     /*----------------------------------------------------------*/
-    // HashCode e Equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pessoa pessoa)) return false;
-        return Objects.equals(getId(), pessoa.getId()) &&
-                Objects.equals(getNomeCompleto(), pessoa.getNomeCompleto()) &&
-                Objects.equals(getDataNascimento(), pessoa.getDataNascimento()) &&
-                Objects.equals(getGenero(), pessoa.getGenero()) &&
-                Objects.equals(getEstrangeiro(), pessoa.getEstrangeiro()) &&
-                Objects.equals(getCPF(), pessoa.getCPF()) &&
-                Objects.equals(getRG(), pessoa.getRG()) &&
-                Objects.equals(getOutrosDocumentos(), pessoa.getOutrosDocumentos()) &&
-                Objects.equals(getEmail(), pessoa.getEmail()) &&
-                Objects.equals(getTelefonecelular(), pessoa.getTelefonecelular()) &&
-                Objects.equals(getTelefoneFixo(), pessoa.getTelefoneFixo()) &&
-                Objects.equals(getEndereco(), pessoa.getEndereco()) &&
-                Objects.equals(getEscolaridade(), pessoa.getEscolaridade()) &&
-                Objects.equals(getNivelSerieEscolaridade(), pessoa.getNivelSerieEscolaridade()) &&
-                Objects.equals(getProfissaoCargoFuncao(), pessoa.getProfissaoCargoFuncao()) &&
-                Objects.equals(getOrgaoInstituicaoEmpresa(), pessoa.getOrgaoInstituicaoEmpresa());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(),
-                getNomeCompleto(),
-                getDataNascimento(),
-                getGenero(),
-                getEstrangeiro(),
-                getCPF(), getRG(),
-                getOutrosDocumentos(),
-                getEmail(),
-                getTelefonecelular(),
-                getTelefoneFixo(),
-                getEndereco(),
-                getEscolaridade(),
-                getNivelSerieEscolaridade(),
-                getProfissaoCargoFuncao(),
-                getOrgaoInstituicaoEmpresa());
-    }
 
 }
