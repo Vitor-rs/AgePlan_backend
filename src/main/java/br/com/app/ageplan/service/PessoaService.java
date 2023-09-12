@@ -29,7 +29,7 @@ public class PessoaService {
     @Transactional(readOnly = true)
     public List<PessoaDto> findAll() {
         List<Pessoa> lista = repository.findAll();
-        return lista.stream().map(x -> new PessoaDto(x)).collect(Collectors.toList());
+        return lista.stream().map(PessoaDto::new).collect(Collectors.toList());
         /* Outra forma de fazer a mesma coisa:
          return lista.stream().map(PessoaDto::new).collect(Collectors.toList());
          Essa forma é mais enxuta, mas pode ser mais difícil de entender.

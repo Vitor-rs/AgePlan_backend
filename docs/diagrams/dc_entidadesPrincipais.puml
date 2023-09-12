@@ -71,12 +71,12 @@ class Aluno {
     - especialidade: Especialidade
 }
 
-Pessoa "*" -- "1" Endereco
+Pessoa "*" -- "1" Enderec0o
 Pessoa "*" -- "1" Escolaridade
 Pessoa "*" -- "1" NivelSerieEscolaridade
 Pessoa "*" -- "1" ProfissaoCargoFuncao
 Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
 
-
+Endereco *-- TipoLogradouro
 
 @enduml

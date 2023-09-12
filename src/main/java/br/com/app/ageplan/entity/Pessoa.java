@@ -1,16 +1,20 @@
 package br.com.app.ageplan.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
 @Entity
 @Table(name = "tb_pessoa")
 public class Pessoa implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
+    /*----------------------------------------------------------*/
+    // Getters
     /*----------------------------------------------------------*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,19 +34,19 @@ public class Pessoa implements Serializable {
     /*----------------------------------------------------------*/
     // Comunicação
     private String email;
-    private String telefonecelular;
+    private String telefoneCelular;
     private String telefoneFixo;
     /*----------------------------------------------------------*/
-    // Endereço
+    // Associação com a classe Endereco
     @ManyToOne
-    @JoinColumn(name = "endereco_id")
+    @JoinColumn(name = "id_endereco_fk")
     private Endereco endereco;
     /*----------------------------------------------------------*/
     // Dados Acadêmicos e Profissionais
-    private Escolaridade escolaridade;
-    private NivelSerieEscolaridade nivelSerieEscolaridade;
-    private ProfissaoCargoFuncao profissaoCargoFuncao;
-    private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
+//    private Escolaridade escolaridade;
+//    private NivelSerieEscolaridade nivelSerieEscolaridade;
+//    private ProfissaoCargoFuncao profissaoCargoFuncao;
+//    private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos ou vazio
@@ -56,12 +60,8 @@ public class Pessoa implements Serializable {
             Long id,
             String nomeCompleto, String dataNascimento, String genero, Boolean estrangeiro,
             String CPF, String RG, String outrosDocumentos,
-            String email, String telefonecelular, String telefoneFixo,
-            Endereco endereco,
-            Escolaridade escolaridade,
-            NivelSerieEscolaridade nivelSerieEscolaridade,
-            ProfissaoCargoFuncao profissaoCargoFuncao,
-            OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
+            String email, String telefoneCelular, String telefoneFixo,
+            Endereco endereco) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -71,146 +71,61 @@ public class Pessoa implements Serializable {
         this.RG = RG;
         this.outrosDocumentos = outrosDocumentos;
         this.email = email;
-        this.telefonecelular = telefonecelular;
+        this.telefoneCelular = telefoneCelular;
         this.telefoneFixo = telefoneFixo;
         this.endereco = endereco;
-        this.escolaridade = escolaridade;
-        this.nivelSerieEscolaridade = nivelSerieEscolaridade;
-        this.profissaoCargoFuncao = profissaoCargoFuncao;
-        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
     }
 
     /*----------------------------------------------------------*/
-    // Getters e Setters
-
-
-    public Long getId() {
-        return id;
-    }
-
+    // Setters
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getNomeCompleto() {
-        return nomeCompleto;
     }
 
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
-    }
-
-    public String getGenero() {
-        return genero;
     }
 
     public void setGenero(String genero) {
         this.genero = genero;
     }
 
-    public Boolean getEstrangeiro() {
-        return estrangeiro;
-    }
-
     public void setEstrangeiro(Boolean estrangeiro) {
         this.estrangeiro = estrangeiro;
-    }
-
-    public String getCPF() {
-        return CPF;
     }
 
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
-    public String getRG() {
-        return RG;
-    }
-
     public void setRG(String RG) {
         this.RG = RG;
-    }
-
-    public String getOutrosDocumentos() {
-        return outrosDocumentos;
     }
 
     public void setOutrosDocumentos(String outrosDocumentos) {
         this.outrosDocumentos = outrosDocumentos;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getTelefonecelular() {
-        return telefonecelular;
-    }
-
-    public void setTelefonecelular(String telefonecelular) {
-        this.telefonecelular = telefonecelular;
-    }
-
-    public String getTelefoneFixo() {
-        return telefoneFixo;
+    public void setTelefoneCelular(String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
     }
 
     public void setTelefoneFixo(String telefoneFixo) {
         this.telefoneFixo = telefoneFixo;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
-    public Escolaridade getEscolaridade() {
-        return escolaridade;
-    }
-
-    public void setEscolaridade(Escolaridade escolaridade) {
-        this.escolaridade = escolaridade;
-    }
-
-    public NivelSerieEscolaridade getNivelSerieEscolaridade() {
-        return nivelSerieEscolaridade;
-    }
-
-    public void setNivelSerieEscolaridade(NivelSerieEscolaridade nivelSerieEscolaridade) {
-        this.nivelSerieEscolaridade = nivelSerieEscolaridade;
-    }
-
-    public ProfissaoCargoFuncao getProfissaoCargoFuncao() {
-        return profissaoCargoFuncao;
-    }
-
-    public void setProfissaoCargoFuncao(ProfissaoCargoFuncao profissaoCargoFuncao) {
-        this.profissaoCargoFuncao = profissaoCargoFuncao;
-    }
-
-    public OrgaoInstituicaoEmpresa getOrgaoInstituicaoEmpresa() {
-        return orgaoInstituicaoEmpresa;
-    }
-
-    public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
-        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
-    }
 
     /*----------------------------------------------------------*/
     // HashCode e Equals
@@ -227,13 +142,9 @@ public class Pessoa implements Serializable {
                 Objects.equals(getRG(), pessoa.getRG()) &&
                 Objects.equals(getOutrosDocumentos(), pessoa.getOutrosDocumentos()) &&
                 Objects.equals(getEmail(), pessoa.getEmail()) &&
-                Objects.equals(getTelefonecelular(), pessoa.getTelefonecelular()) &&
+                Objects.equals(getTelefoneCelular(), pessoa.getTelefoneCelular()) &&
                 Objects.equals(getTelefoneFixo(), pessoa.getTelefoneFixo()) &&
-                Objects.equals(getEndereco(), pessoa.getEndereco()) &&
-                Objects.equals(getEscolaridade(), pessoa.getEscolaridade()) &&
-                Objects.equals(getNivelSerieEscolaridade(), pessoa.getNivelSerieEscolaridade()) &&
-                Objects.equals(getProfissaoCargoFuncao(), pessoa.getProfissaoCargoFuncao()) &&
-                Objects.equals(getOrgaoInstituicaoEmpresa(), pessoa.getOrgaoInstituicaoEmpresa());
+                Objects.equals(getEndereco(), pessoa.getEndereco());
     }
 
     @Override
@@ -246,13 +157,9 @@ public class Pessoa implements Serializable {
                 getCPF(), getRG(),
                 getOutrosDocumentos(),
                 getEmail(),
-                getTelefonecelular(),
+                getTelefoneCelular(),
                 getTelefoneFixo(),
-                getEndereco(),
-                getEscolaridade(),
-                getNivelSerieEscolaridade(),
-                getProfissaoCargoFuncao(),
-                getOrgaoInstituicaoEmpresa());
+                getEndereco());
     }
 
 }
