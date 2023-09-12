@@ -71,7 +71,11 @@ class Aluno {
     - especialidade: Especialidade
 }
 
-Pessoa -- Endereco
+Pessoa "*" -- "1" Endereco
+Pessoa "*" -- "1" Escolaridade
+Pessoa "*" -- "1" NivelSerieEscolaridade
+Pessoa "*" -- "1" ProfissaoCargoFuncao
+Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
 
 
 
