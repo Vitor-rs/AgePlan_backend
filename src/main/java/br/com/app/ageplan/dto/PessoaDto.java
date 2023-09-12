@@ -1,5 +1,7 @@
-package br.com.app.ageplan.entity;
+package br.com.app.ageplan.dto;
 
+
+import br.com.app.ageplan.entity.*;
 
 import java.io.Serial;
 import java.io.Serializable;

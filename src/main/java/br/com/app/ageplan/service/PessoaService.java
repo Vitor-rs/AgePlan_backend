@@ -1,7 +1,7 @@
 package br.com.app.ageplan.service;
 
 import br.com.app.ageplan.entity.Pessoa;
-import br.com.app.ageplan.entity.PessoaDto;
+import br.com.app.ageplan.dto.PessoaDto;
 import br.com.app.ageplan.repository.PessoaRepository;
 import br.com.app.ageplan.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

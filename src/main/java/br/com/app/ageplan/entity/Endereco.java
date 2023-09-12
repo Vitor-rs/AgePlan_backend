@@ -21,11 +21,10 @@ public class Endereco implements Serializable {
     @JoinColumn(name = "tipo_logradouro_id")
     private TipoLogradouro tipoLogradouro;
     private String nomeLogradouro;
-    private String numero;
+    private Integer numero;
     private String complemento;
     private String bairro;
     private String cidade;
     private String estado;
-
 
 }

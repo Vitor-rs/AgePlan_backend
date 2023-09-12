@@ -1,32 +1,77 @@
 @startuml
 
-abstract class Pessoa {
+class Pessoa {
     - id: Long
     - nomeCompleto: String
     - dataNascimento: Date
+    - genero: String
+    - estrangeiro: Boolean
+
     - CPF: String
     - RG: String
-    - genero: String
+    - outrosDocumentos: String
+
     - email: String
     - telefoneCelular: String
     - telefoneFixo: String
-    - endereco: String
-    - estrangeiro: Boolean
-    - dadoAcademico: DadoAcademico
-    - dadoProfissional: DadoProfissional
-}
 
-class DadoAcademico {
-    - nivelSerieEscolaridade: NivelSerieEscolaridade
+    - endereco: Endereco
+
     - escolaridade: Escolaridade
+    - nivelSerieEscolaridade: NivelSerieEscolaridade
+    - profissaoCargoFuncao: ProfissaoCargoFuncao
     - orgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
 }
 
-class DadoProfissional {
-    - nivelSerieEscolaridade: NivelSerieEscolaridade
-    - Escolaridade: Escolaridade
-    - OrgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
+class Endereco {
+    - id: Long
+    - CEP: String
+    - TipoLogradouro: TipoLogradouro
+    - nomeLogradouro: String
+    - numero: Integer
+    - complemento: String
+    - bairro: String
+    - cidade: String
+    - estado: String
+    - pais: String
 }
+
+class TipoLogradouro {
+    - id: Long
+    - nomeTipoLogradouro: String
+}
+
+class Escolaridade {
+    - id: Long
+    - nomeDescricao: String
+}
+
+class NivelSerieEscolaridade {
+    - id: Long
+    - nomeDescricao: String
+}
+
+class OrgaoInstituicaoEmpresa {
+    - id: Long
+    - nomeDescricao: String
+}
+
+class ProfissaoCargoFuncao {
+    - id: Long
+    - nomeDescricao: String
+}
+
+class Aluno {
+    - id: Long
+    - matricula: Matricula
+    - contrato: Contrato
+}
+ class Professor {
+    - id: Long
+    - especialidade: Especialidade
+}
+
+Pessoa -- Endereco
 
 
 
