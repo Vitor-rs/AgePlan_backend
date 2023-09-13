@@ -73,12 +73,12 @@ public class EnderecoService {
     /*------------------------------------------*/
     // Método para retornar um objeto EnderecoDto e evitar duplicação de código.
     private EnderecoDto getEnderecoDto(EnderecoDto dto, Endereco entity) {
-        entity.setNomeLogradouro(dto.getNomeLogradouro());
-        entity.setNumero(dto.getNumero());
-        entity.setComplemento(dto.getComplemento());
-        entity.setBairro(dto.getBairro());
-        entity.setCidade(dto.getCidade());
-        entity.setEstado(dto.getEstado());
+//        entity.setNomeLogradouro(dto.getNomeLogradouro());
+//        entity.setNumero(dto.getNumero());
+//        entity.setComplemento(dto.getComplemento());
+//        entity.setBairro(dto.getBairro());
+//        entity.setCidade(dto.getCidade());
+//        entity.setEstado(dto.getEstado());
         entity.setCEP(dto.getCEP());
 
         entity = repository.save(entity);

@@ -1,5 +1,10 @@
-insert into tb_pessoa (nome_completo, data_nascimento, genero, estrangeiro, cpf, rg, outros_documentos, email, telefone_celular, telefone_fixo, id_endereco_fk)
-values ('João da Silva', '01/01/2000', 'Masculino', 0, '700.111.222-33', '1.000.333', 'Passaporte: 123456', 'vitor@email.com', '67999999999', '6734615555', 1);
+insert into tb_tipo_logradouro (nome_tipo_logradouro) values ('Rua');
+insert into tb_endereco (cep, tipo_logradouro_id_fk) values ('12345678', 1);
+insert into tb_pessoa (nome_completo, id_endereco_fk) values ('Vitor Santos', 1);
 
-insert into tb_endereco (cep, nome_logradouro, numero, complemento, bairro, cidade, estado, pais)
-values ('79000000', 'Rua 1', 1, 'Casa 1', 'Centro', 'Campo Grande', 'MS', 'Brasil');
+insert into tb_tipo_logradouro (nome_tipo_logradouro) values ('Avenida');
+insert into tb_endereco (cep, tipo_logradouro_id_fk) values ('87654321', 2);
+insert into tb_pessoa (nome_completo, id_endereco_fk) values ('João Silva', 2);
+
+insert into tb_endereco (cep, tipo_logradouro_id_fk) values ('12345678', 2);
+insert into tb_pessoa (nome_completo, id_endereco_fk) values ('Maria Souza', 3);

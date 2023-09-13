@@ -55,10 +55,10 @@ public class PessoaService {
         Pessoa entity = new Pessoa();
 
         entity.setNomeCompleto(dto.getNomeCompleto());
-        entity.setDataNascimento(dto.getDataNascimento());
-        entity.setCPF(dto.getCPF());
-        entity.setRG(dto.getRG());
-
+//        entity.setDataNascimento(dto.getDataNascimento());
+//        entity.setCPF(dto.getCPF());
+//        entity.setRG(dto.getRG());
+//
         entity = repository.save(entity);
 
         return new PessoaDto(entity);
@@ -71,9 +71,9 @@ public class PessoaService {
             Pessoa entity = repository.getReferenceById(id);
 
             entity.setNomeCompleto(dto.getNomeCompleto());
-            entity.setDataNascimento(dto.getDataNascimento());
-            entity.setCPF(dto.getCPF());
-            entity.setRG(dto.getRG());
+//            entity.setDataNascimento(dto.getDataNascimento());
+//            entity.setCPF(dto.getCPF());
+//            entity.setRG(dto.getRG());
 
             entity = repository.save(entity);
 
