@@ -21,7 +21,7 @@ public class Endereco implements Serializable {
     private Long id;
     /*----------------------------------------------------------*/
     private String CEP;
-    //    @ManyToOne
+//    @ManyToOne
 //    @JoinColumn(name = "tipo_logradouro_fk")
 //    private TipoLogradouro tipoLogradouro;
     private String nomeLogradouro;
@@ -34,19 +34,19 @@ public class Endereco implements Serializable {
 
     /*----------------------------------------------------------*/
     // Associação com a classe Pessoa
-    @OneToMany(mappedBy = "endereco", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Pessoa> pessoas;
+//    @OneToMany(mappedBy = "endereco", fetch = FetchType.LAZY)
+//    @JsonIgnore
+//    private List<Pessoa> pessoas;
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public Endereco() {
-    }
+    public Endereco() {}
 
     /*----------------------------------------------------------*/
     // Construtor com argumentos
     public Endereco(Long id, String CEP, String nomeLogradouro, Integer numero,
-                    String complemento, String bairro, String cidade, String estado, String pais, List<Pessoa> pessoas) {
+                    String complemento, String bairro, String cidade, String estado, String pais)
+    {
         this.id = id;
         this.CEP = CEP;
         this.nomeLogradouro = nomeLogradouro;
@@ -56,7 +56,6 @@ public class Endereco implements Serializable {
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
-        this.pessoas = pessoas;
     }
 
     /*----------------------------------------------------------*/
@@ -88,7 +87,6 @@ public class Endereco implements Serializable {
     public void setPais(String pais) {
         this.pais = pais;
     }
-    public void setPessoas(List<Pessoa> pessoas) { this.pessoas = pessoas; }
 
     /*----------------------------------------------------------*/
     // equals() e hashCode()
@@ -104,8 +102,7 @@ public class Endereco implements Serializable {
                 Objects.equals(getBairro(), endereco.getBairro()) &&
                 Objects.equals(getCidade(), endereco.getCidade()) &&
                 Objects.equals(getEstado(), endereco.getEstado()) &&
-                Objects.equals(getPais(), endereco.getPais()) &&
-                Objects.equals(getPessoas(), endereco.getPessoas());
+                Objects.equals(getPais(), endereco.getPais());
     }
 
     @Override
@@ -119,7 +116,6 @@ public class Endereco implements Serializable {
                 getBairro(),
                 getCidade(),
                 getEstado(),
-                getPais(),
-                getPessoas());
+                getPais());
     }
 }

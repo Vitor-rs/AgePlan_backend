@@ -15,7 +15,9 @@ import java.io.Serializable;
 public class PessoaDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
+
     private Long id;
+
     private String nomeCompleto;
     private String dataNascimento;
     private String genero;
@@ -24,7 +26,7 @@ public class PessoaDto implements Serializable {
     private String RG;
     private String outrosDocumentos;
     private String email;
-    private String telefonecelular;
+    private String telefoneCelular;
     private String telefoneFixo;
     private Endereco endereco;
 
@@ -37,8 +39,9 @@ public class PessoaDto implements Serializable {
     public PessoaDto(Long id,
                      String nomeCompleto, String dataNascimento, String genero, Boolean estrangeiro,
                      String CPF, String RG, String outrosDocumentos,
-                     String email, String telefonecelular, String telefoneFixo,
-                     Endereco endereco) {
+                     String email, String telefoneCelular, String telefoneFixo,
+                     Endereco endereco)
+    {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -48,10 +51,9 @@ public class PessoaDto implements Serializable {
         this.RG = RG;
         this.outrosDocumentos = outrosDocumentos;
         this.email = email;
-        this.telefonecelular = telefonecelular;
+        this.telefoneCelular = telefoneCelular;
         this.telefoneFixo = telefoneFixo;
         this.endereco = endereco;
-;
     }
 
     /*----------------------------------------------------------*/
@@ -67,10 +69,9 @@ public class PessoaDto implements Serializable {
         RG = entity.getRG();
         outrosDocumentos = entity.getOutrosDocumentos();
         email = entity.getEmail();
-        telefonecelular = entity.getTelefoneCelular();
+        telefoneCelular = entity.getTelefoneCelular();
         telefoneFixo = entity.getTelefoneFixo();
         endereco = entity.getEndereco();
-;
     }
 
     /*----------------------------------------------------------*/
@@ -84,9 +85,8 @@ public class PessoaDto implements Serializable {
     public void setRG(String RG) { this.RG = RG; }
     public void setOutrosDocumentos(String outrosDocumentos) { this.outrosDocumentos = outrosDocumentos; }
     public void setEmail(String email) { this.email = email; }
-    public void setTelefoneCelular(String telefoneCelular) { this.telefonecelular = telefoneCelular; }
+    public void setTelefoneCelular(String telefoneCelular) { this.telefoneCelular = telefoneCelular; }
     public void setTelefoneFixo(String telefoneFixo) { this.telefoneFixo = telefoneFixo; }
     public void setEndereco(Endereco endereco) { this.endereco = endereco; }
-
 
 }

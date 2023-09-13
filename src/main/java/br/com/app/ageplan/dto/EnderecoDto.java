@@ -1,11 +1,13 @@
 package br.com.app.ageplan.dto;
 
 import br.com.app.ageplan.entity.Endereco;
+import br.com.app.ageplan.entity.Pessoa;
 import br.com.app.ageplan.entity.TipoLogradouro;
 import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * DTO para {@link Endereco}
@@ -16,40 +18,41 @@ public class EnderecoDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     /*------------------------------------------------------------*/
-    // Getters
+    private Long id;
+
+    private String CEP;
+    //private TipoLogradouro tipoLogradouro;
+    private String nomeLogradouro;
+    private Integer numero;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private String pais;
     /*------------------------------------------------------------*/
-    Long id;
-    String CEP;
-    TipoLogradouro tipoLogradouro;
-    String nomeLogradouro;
-    Integer numero;
-    String complemento;
-    String bairro;
-    String cidade;
-    String estado;
-    String pais;
+    // Relacionamento com a classe Pessoa
+    private List<Pessoa> pessoas;
 
     /*------------------------------------------------------------*/
     // Construtor sem argumentos
-    public EnderecoDto() {
-    }
+    public EnderecoDto() {}
 
     /*------------------------------------------------------------*/
     // Construtor com argumentos
     public EnderecoDto(
             Long id,
             String CEP,
-            TipoLogradouro tipoLogradouro,
             String nomeLogradouro,
             Integer numero,
             String complemento,
             String bairro,
             String cidade,
             String estado,
-            String pais) {
+            String pais,
+            List<Pessoa> pessoas)
+    {
         this.id = id;
         this.CEP = CEP;
-        this.tipoLogradouro = tipoLogradouro;
         this.nomeLogradouro = nomeLogradouro;
         this.numero = numero;
         this.complemento = complemento;
@@ -57,6 +60,7 @@ public class EnderecoDto implements Serializable {
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
+        this.pessoas = pessoas;
     }
 
     /*------------------------------------------------------------*/
@@ -71,13 +75,13 @@ public class EnderecoDto implements Serializable {
         this.cidade = endereco.getCidade();
         this.estado = endereco.getEstado();
         this.pais = endereco.getPais();
+        this.pessoas = endereco.getPessoas();
     }
 
     /*------------------------------------------------------------*/
     // Setters
     public void setId(Long id) { this.id = id; }
     public void setCEP(String CEP) { this.CEP = CEP; }
-    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) { this.tipoLogradouro = tipoLogradouro; }
     public void setNomeLogradouro(String nomeLogradouro) { this.nomeLogradouro = nomeLogradouro; }
     public void setNumero(Integer numero) { this.numero = numero; }
     public void setComplemento(String complemento) { this.complemento = complemento; }
@@ -85,10 +89,6 @@ public class EnderecoDto implements Serializable {
     public void setCidade(String cidade) { this.cidade = cidade; }
     public void setEstado(String estado) { this.estado = estado; }
     public void setPais(String pais) { this.pais = pais; }
-
-
-    /*------------------------------------------------------------*/
-    // Setters
-
+    public void setPessoas(List<Pessoa> pessoas) { this.pessoas = pessoas; }
 
 }
