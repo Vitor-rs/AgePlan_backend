@@ -1,7 +1,13 @@
 package br.com.app.ageplan.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -18,11 +24,8 @@ public class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     // Dados Pessoais
     private String nomeCompleto;
-
-/*
     private String dataNascimento;
     private String genero;
     private Boolean estrangeiro;
@@ -36,13 +39,11 @@ public class Pessoa implements Serializable {
     private String email;
     private String telefoneCelular;
     private String telefoneFixo;
-*/
 
     // Associação com a classe Endereco
     @ManyToOne
     @JoinColumn(name = "id_endereco_fk")
     private Endereco endereco;
-
 
 /*
     Dados Acadêmicos e Profissionais
@@ -52,33 +53,27 @@ public class Pessoa implements Serializable {
     private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 */
 
-
     // Construtor sem argumentos ou vazio
     public Pessoa() {}
-
-
 
     // Construtor com argumentos
     public Pessoa(
             Long id,
             String nomeCompleto,
-/*
-    String dataNascimento,
-    String genero,
-    Boolean estrangeiro,
-    String CPF,
-    String RG,
-    String outrosDocumentos,
-    String email,
-    String telefoneCelular,
-    String telefoneFixo,
-*/
+            String dataNascimento,
+            String genero,
+            Boolean estrangeiro,
+            String CPF,
+            String RG,
+            String outrosDocumentos,
+            String email,
+            String telefoneCelular,
+            String telefoneFixo,
             Endereco endereco
     )
     {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
-/*
         this.dataNascimento = dataNascimento;
         this.genero = genero;
         this.estrangeiro = estrangeiro;
@@ -88,7 +83,6 @@ public class Pessoa implements Serializable {
         this.email = email;
         this.telefoneCelular = telefoneCelular;
         this.telefoneFixo = telefoneFixo;
-*/
         this.endereco = endereco;
     }
 
@@ -102,7 +96,7 @@ public class Pessoa implements Serializable {
         this.nomeCompleto = nomeCompleto;
     }
 
-/*
+
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
@@ -130,8 +124,8 @@ public class Pessoa implements Serializable {
     public void setTelefoneFixo(String telefoneFixo) {
         this.telefoneFixo = telefoneFixo;
     }
-*/
-public void setEndereco(Endereco endereco) { this.endereco = endereco; }
+
+    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
 
     /*----------------------------------------------------------*/
     // HashCode e Equals
@@ -141,7 +135,7 @@ public void setEndereco(Endereco endereco) { this.endereco = endereco; }
         if (!(o instanceof Pessoa pessoa)) return false;
         return Objects.equals(getId(), pessoa.getId()) &&
                 Objects.equals(getNomeCompleto(), pessoa.getNomeCompleto() ) &&
-/*
+
                 Objects.equals(getDataNascimento(), pessoa.getDataNascimento()) &&
                 Objects.equals(getGenero(), pessoa.getGenero()) &&
                 Objects.equals(getEstrangeiro(), pessoa.getEstrangeiro()) &&
@@ -151,7 +145,6 @@ public void setEndereco(Endereco endereco) { this.endereco = endereco; }
                 Objects.equals(getEmail(), pessoa.getEmail()) &&
                 Objects.equals(getTelefoneCelular(), pessoa.getTelefoneCelular()) &&
                 Objects.equals(getTelefoneFixo(), pessoa.getTelefoneFixo()) &&
-*/
                 Objects.equals(getEndereco(), pessoa.getEndereco()
                 );
     }
@@ -160,7 +153,6 @@ public void setEndereco(Endereco endereco) { this.endereco = endereco; }
     public int hashCode() {
         return Objects.hash(getId(),
                 getNomeCompleto(),
-/*
                 getDataNascimento(),
                 getGenero(),
                 getEstrangeiro(),
@@ -169,7 +161,6 @@ public void setEndereco(Endereco endereco) { this.endereco = endereco; }
                 getEmail(),
                 getTelefoneCelular(),
                 getTelefoneFixo(),
-*/
                 getEndereco()
         );
     }
