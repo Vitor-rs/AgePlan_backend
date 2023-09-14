@@ -21,7 +21,8 @@ public class Escolaridade implements Serializable {
 
     /*--------------------------------------------------------*/
     // Construtor vazio
-    public Escolaridade() {}
+    public Escolaridade() {
+    }
 
     // Construtor com parâmetros
     public Escolaridade(Long id, String nomeDescricao) {
@@ -35,14 +36,14 @@ public class Escolaridade implements Serializable {
         return id;
     }
 
-    public String getNomeDescricao() {
-        return nomeDescricao;
-    }
-
     /*--------------------------------------------------------*/
     // Setters
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNomeDescricao() {
+        return nomeDescricao;
     }
 
     public void setNomeDescricao(String nomeDescricao) {

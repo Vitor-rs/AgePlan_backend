@@ -1,13 +1,7 @@
 package br.com.app.ageplan.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -54,7 +48,8 @@ public class Pessoa implements Serializable {
 */
 
     // Construtor sem argumentos ou vazio
-    public Pessoa() {}
+    public Pessoa() {
+    }
 
     // Construtor com argumentos
     public Pessoa(
@@ -70,8 +65,7 @@ public class Pessoa implements Serializable {
             String telefoneCelular,
             String telefoneFixo,
             Endereco endereco
-    )
-    {
+    ) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -100,32 +94,42 @@ public class Pessoa implements Serializable {
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
     public void setEstrangeiro(Boolean estrangeiro) {
         this.estrangeiro = estrangeiro;
     }
+
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
+
     public void setRG(String RG) {
         this.RG = RG;
     }
+
     public void setOutrosDocumentos(String outrosDocumentos) {
         this.outrosDocumentos = outrosDocumentos;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
+
     public void setTelefoneCelular(String telefoneCelular) {
         this.telefoneCelular = telefoneCelular;
     }
+
     public void setTelefoneFixo(String telefoneFixo) {
         this.telefoneFixo = telefoneFixo;
     }
 
-    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
     /*----------------------------------------------------------*/
     // HashCode e Equals
@@ -134,7 +138,7 @@ public class Pessoa implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Pessoa pessoa)) return false;
         return Objects.equals(getId(), pessoa.getId()) &&
-                Objects.equals(getNomeCompleto(), pessoa.getNomeCompleto() ) &&
+                Objects.equals(getNomeCompleto(), pessoa.getNomeCompleto()) &&
 
                 Objects.equals(getDataNascimento(), pessoa.getDataNascimento()) &&
                 Objects.equals(getGenero(), pessoa.getGenero()) &&

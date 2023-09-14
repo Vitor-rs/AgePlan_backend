@@ -54,7 +54,10 @@ public class TipoLogradouroService {
 
     @Transactional
     public void delete(Long id) {
-        try { if (repository.existsById(id)) { repository.deleteById(id); }
+        try {
+            if (repository.existsById(id)) {
+                repository.deleteById(id);
+            }
         } catch (ResourceNotFoundException e) {
             throw new ResourceNotFoundException("O registro solicitado de ID " + id + " não foi localizado.");
         }

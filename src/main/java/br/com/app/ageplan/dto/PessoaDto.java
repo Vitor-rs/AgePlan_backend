@@ -1,7 +1,8 @@
 package br.com.app.ageplan.dto;
 
 
-import br.com.app.ageplan.entity.*;
+import br.com.app.ageplan.entity.Endereco;
+import br.com.app.ageplan.entity.Pessoa;
 import lombok.Getter;
 
 import java.io.Serial;
@@ -29,11 +30,12 @@ public class PessoaDto implements Serializable {
     private String telefoneCelular;
     private String telefoneFixo;
 
-private Endereco endereco;
+    private Endereco endereco;
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public PessoaDto() {}
+    public PessoaDto() {
+    }
     /*----------------------------------------------------------*/
     // Construtor com argumentos
 
@@ -49,8 +51,7 @@ private Endereco endereco;
                      String telefoneCelular,
                      String telefoneFixo,
                      Endereco endereco
-    )
-    {
+    ) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.dataNascimento = dataNascimento;
@@ -85,17 +86,52 @@ private Endereco endereco;
 
     /*----------------------------------------------------------*/
     // Setters
-    public void setId(Long id) { this.id = id; }
-    public void setNomeCompleto(String nomeCompleto) { this.nomeCompleto = nomeCompleto; }
-    public void setDataNascimento(String dataNascimento) { this.dataNascimento = dataNascimento; }
-    public void setGenero(String genero) { this.genero = genero; }
-    public void setEstrangeiro(Boolean estrangeiro) { this.estrangeiro = estrangeiro; }
-    public void setCPF(String CPF) { this.CPF = CPF; }
-    public void setRG(String RG) { this.RG = RG; }
-    public void setOutrosDocumentos(String outrosDocumentos) { this.outrosDocumentos = outrosDocumentos; }
-    public void setEmail(String email) { this.email = email; }
-    public void setTelefoneCelular(String telefoneCelular) { this.telefoneCelular = telefoneCelular; }
-    public void setTelefoneFixo(String telefoneFixo) { this.telefoneFixo = telefoneFixo; }
-    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setEstrangeiro(Boolean estrangeiro) {
+        this.estrangeiro = estrangeiro;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public void setRG(String RG) {
+        this.RG = RG;
+    }
+
+    public void setOutrosDocumentos(String outrosDocumentos) {
+        this.outrosDocumentos = outrosDocumentos;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefoneCelular(String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
+    }
+
+    public void setTelefoneFixo(String telefoneFixo) {
+        this.telefoneFixo = telefoneFixo;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
 }

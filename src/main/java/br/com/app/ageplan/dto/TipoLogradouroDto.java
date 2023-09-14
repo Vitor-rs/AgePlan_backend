@@ -27,7 +27,8 @@ public class TipoLogradouroDto implements Serializable {
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public TipoLogradouroDto() {}
+    public TipoLogradouroDto() {
+    }
 
     /*----------------------------------------------------------*/
     // Construtor com argumentos
@@ -52,7 +53,6 @@ public class TipoLogradouroDto implements Serializable {
     public void setNomeTipoLogradouro(String nomeTipoLogradouro) {
         this.nomeTipoLogradouro = nomeTipoLogradouro;
     }
-
 
 
 }

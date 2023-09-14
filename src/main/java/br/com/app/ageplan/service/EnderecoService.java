@@ -27,32 +27,24 @@ public class EnderecoService {
 
     @Transactional(readOnly = true)
     public EnderecoDto findById(Long id) {
-
         Optional<Endereco> obj = repository.findById(id);
-
         Endereco entity = obj.orElseThrow(() ->
                 new ResourceNotFoundException("O registro solicitado não foi localizado."));
-
         return new EnderecoDto(entity);
     }
 
     @Transactional
     public EnderecoDto insert(EnderecoDto dto) {
-
         Endereco entity = new Endereco();
-
         return getEnderecoDto(dto, entity);
     }
 
 
     @Transactional
     public EnderecoDto update(Long id, EnderecoDto dto) {
-
         try {
             Endereco entity = repository.getReferenceById(id);
-
             return getEnderecoDto(dto, entity);
-
         } catch (ResourceNotFoundException e) {
             throw new ResourceNotFoundException("O registro solicitado de ID " + id + " não foi localizado.");
         }
@@ -60,7 +52,6 @@ public class EnderecoService {
 
     @Transactional
     public void delete(Long id) {
-
         try {
             if (repository.existsById(id)) {
                 repository.deleteById(id);
@@ -73,13 +64,16 @@ public class EnderecoService {
     /*------------------------------------------*/
     // Método para retornar um objeto EnderecoDto e evitar duplicação de código.
     private EnderecoDto getEnderecoDto(EnderecoDto dto, Endereco entity) {
-//        entity.setNomeLogradouro(dto.getNomeLogradouro());
-//        entity.setNumero(dto.getNumero());
-//        entity.setComplemento(dto.getComplemento());
-//        entity.setBairro(dto.getBairro());
-//        entity.setCidade(dto.getCidade());
-//        entity.setEstado(dto.getEstado());
+
         entity.setCEP(dto.getCEP());
+        entity.setNomeLogradouro(dto.getNomeLogradouro());
+        entity.setNumero(dto.getNumero());
+        entity.setComplemento(dto.getComplemento());
+        entity.setBairro(dto.getBairro());
+        entity.setCidade(dto.getCidade());
+        entity.setEstado(dto.getEstado());
+        entity.setPais(dto.getPais());
+        entity.setTipoLogradouro(dto.getTipoLogradouro());
 
         entity = repository.save(entity);
 

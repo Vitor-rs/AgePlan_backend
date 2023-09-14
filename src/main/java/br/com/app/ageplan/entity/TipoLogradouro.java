@@ -22,7 +22,8 @@ public class TipoLogradouro implements Serializable {
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public TipoLogradouro() {}
+    public TipoLogradouro() {
+    }
 
     /*----------------------------------------------------------*/
     // Construtor com argumentos
