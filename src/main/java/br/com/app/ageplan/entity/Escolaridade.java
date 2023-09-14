@@ -1,20 +1,23 @@
 package br.com.app.ageplan.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
 @Entity
 @Table(name = "tb_escolaridade")
 public class Escolaridade implements Serializable {
     @Serial
     private final static long serialVersionUID = 1L;
     /*--------------------------------------------------------*/
+    // Getters
+    /*--------------------------------------------------------*/
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     /*--------------------------------------------------------*/
     private String nomeDescricao;
@@ -31,19 +34,9 @@ public class Escolaridade implements Serializable {
     }
 
     /*--------------------------------------------------------*/
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    /*--------------------------------------------------------*/
     // Setters
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getNomeDescricao() {
-        return nomeDescricao;
     }
 
     public void setNomeDescricao(String nomeDescricao) {

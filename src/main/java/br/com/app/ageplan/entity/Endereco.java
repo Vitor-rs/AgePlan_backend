@@ -43,7 +43,8 @@ public class Endereco implements Serializable {
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public Endereco() {}
+    public Endereco() {
+    }
 
     /*----------------------------------------------------------*/
     // Construtor com argumentos

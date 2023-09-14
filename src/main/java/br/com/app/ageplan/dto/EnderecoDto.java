@@ -35,7 +35,8 @@ public class EnderecoDto implements Serializable {
 
     /*------------------------------------------------------------*/
     // Construtor sem argumentos
-    public EnderecoDto() {}
+    public EnderecoDto() {
+    }
 
     /*------------------------------------------------------------*/
     // Construtor com argumentos
@@ -83,16 +84,39 @@ public class EnderecoDto implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setCEP(String CEP) {
         this.CEP = CEP;
     }
-    public void setNomeLogradouro(String nomeLogradouro) { this.nomeLogradouro = nomeLogradouro; }
-    public void setNumero(Integer numero) { this.numero = numero; }
-    public void setComplemento(String complemento) { this.complemento = complemento; }
-    public void setBairro(String bairro) { this.bairro = bairro; }
-    public void setCidade(String cidade) { this.cidade = cidade; }
-    public void setEstado(String estado) { this.estado = estado; }
-    public void setPais(String pais) { this.pais = pais; }
+
+    public void setNomeLogradouro(String nomeLogradouro) {
+        this.nomeLogradouro = nomeLogradouro;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
     public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
         this.tipoLogradouro = tipoLogradouro;
     }

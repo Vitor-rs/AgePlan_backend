@@ -26,17 +26,51 @@ public class PessoaService {
     @Autowired
     private PessoaRepository repository;
 
+    /**
+     * Para evitar repetição de código, esse método é usado tanto no método insert quanto no método update.
+     * Assim o código fica mais limpo e mais fácil de entender. Pois o código de insert e update são muito parecidos.
+     */
+    private PessoaDto getPessoaDto(PessoaDto dto, Pessoa entity) {
+        entity.setNomeCompleto(dto.getNomeCompleto());
+        entity.setDataNascimento(dto.getDataNascimento());
+        entity.setGenero(dto.getGenero());
+        entity.setEstrangeiro(dto.getEstrangeiro());
+        entity.setCPF(dto.getCPF());
+        entity.setRG(dto.getRG());
+        entity.setOutrosDocumentos(dto.getOutrosDocumentos());
+        entity.setEmail(dto.getEmail());
+        entity.setTelefoneCelular(dto.getTelefoneCelular());
+        entity.setTelefoneFixo(dto.getTelefoneFixo());
+        entity.setEndereco(dto.getEndereco());
+        entity.setEscolaridade(dto.getEscolaridade());
+
+        entity = repository.save(entity);
+
+        return new PessoaDto(entity);
+    }
+
+
+    /*-------------------------------------------------------------------------------*/
+    // Métodos de busca e listagem
     @Transactional(readOnly = true)
     public List<PessoaDto> findAll() {
         List<Pessoa> lista = repository.findAll();
         return lista.stream().map(PessoaDto::new).collect(Collectors.toList());
-        /* Outra forma de fazer a mesma coisa:
+        /*
+         Outra forma de fazer a mesma coisa:
          return lista.stream().map(PessoaDto::new).collect(Collectors.toList());
          Essa forma é mais enxuta, mas pode ser mais difícil de entender.
          A expressão lambda (x -> new PessoaDto(x)) é equivalente a PessoaDto::new
          pode ser lida como "para cada elemento x da lista, crie um novo objeto PessoaDto
          com o elemento x como argumento do construtor".
-         */
+         Se usam esses dois pontos duplos (::) para referenciar um construtor ou um método.
+         Na prática, é como se você tivesse escrito o código abaixo:
+            List<PessoaDto> listaDto = new ArrayList<>();
+            for (Pessoa x : lista) {
+                listaDto.add(new PessoaDto(x));
+            }
+            return listaDto;
+        */
     }
 
     @Transactional(readOnly = true)
@@ -46,6 +80,9 @@ public class PessoaService {
                 new ResourceNotFoundException("O registro solicitado não foi localizado."));
         return new PessoaDto(entity);
     }
+
+    /*-------------------------------------------------------------------------------*/
+    // Métodos de inserção, atualização e remoção
 
     @Transactional
     public PessoaDto insert(PessoaDto dto) {
@@ -63,29 +100,6 @@ public class PessoaService {
         }
     }
 
-
-    /**
-     * Para evitar repetição de código, esse método é usado tanto no método insert quanto no método update.
-     * Assim o código fica mais limpo e mais fácil de entender. Pois o código de insert e update são muito parecidos.
-     */
-    private PessoaDto getPessoaDto(PessoaDto dto, Pessoa entity) {
-        entity.setNomeCompleto(dto.getNomeCompleto());
-        entity.setDataNascimento(dto.getDataNascimento());
-        entity.setGenero(dto.getGenero());
-        entity.setEstrangeiro(dto.getEstrangeiro());
-        entity.setCPF(dto.getCPF());
-        entity.setRG(dto.getRG());
-        entity.setOutrosDocumentos(dto.getOutrosDocumentos());
-        entity.setEmail(dto.getEmail());
-        entity.setTelefoneCelular(dto.getTelefoneCelular());
-        entity.setTelefoneFixo(dto.getTelefoneFixo());
-        entity.setEndereco(dto.getEndereco());
-
-        entity = repository.save(entity);
-
-        return new PessoaDto(entity);
-    }
-
     public void delete(Long id) {
         try {
             if (repository.existsById(id)) {
@@ -95,5 +109,6 @@ public class PessoaService {
             throw new ResourceNotFoundException("O registro solicitado de ID " + id + " não foi localizado.");
         }
     }
+
 
 }
