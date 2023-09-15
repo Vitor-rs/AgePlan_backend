@@ -47,8 +47,10 @@ public class Pessoa implements Serializable {
 
 //    private NivelSerieEscolaridade nivelSerieEscolaridade;
 //    private ProfissaoCargoFuncao profissaoCargoFuncao;
-//    private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 
+    @ManyToOne
+    @JoinColumn(name = "id_orgao_instituicao_empresa_fk")
+    private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 
     // Construtor sem argumentos ou vazio
     public Pessoa() {
@@ -68,7 +70,8 @@ public class Pessoa implements Serializable {
             String telefoneCelular,
             String telefoneFixo,
             Endereco endereco,
-            Escolaridade escolaridade
+            Escolaridade escolaridade,
+            OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa
     ) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
@@ -83,6 +86,7 @@ public class Pessoa implements Serializable {
         this.telefoneFixo = telefoneFixo;
         this.endereco = endereco;
         this.escolaridade = escolaridade;
+        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
     }
 
     // Setters
@@ -125,6 +129,9 @@ public class Pessoa implements Serializable {
     public void setEscolaridade(Escolaridade escolaridade) {
         this.escolaridade = escolaridade;
     }
+    public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
+        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
+    }
 
     /*----------------------------------------------------------*/
     // HashCode e Equals
@@ -144,7 +151,8 @@ public class Pessoa implements Serializable {
                 Objects.equals(getTelefoneCelular(), pessoa.getTelefoneCelular()) &&
                 Objects.equals(getTelefoneFixo(), pessoa.getTelefoneFixo()) &&
                 Objects.equals(getEndereco(), pessoa.getEndereco()) &&
-                Objects.equals(getEscolaridade(), pessoa.getEscolaridade()
+                Objects.equals(getEscolaridade(), pessoa.getEscolaridade()) &&
+                Objects.equals(getOrgaoInstituicaoEmpresa(), pessoa.getOrgaoInstituicaoEmpresa()
         );
     }
 
@@ -161,7 +169,8 @@ public class Pessoa implements Serializable {
                 getTelefoneCelular(),
                 getTelefoneFixo(),
                 getEndereco(),
-                getEscolaridade()
+                getEscolaridade(),
+                getOrgaoInstituicaoEmpresa()
         );
     }
 

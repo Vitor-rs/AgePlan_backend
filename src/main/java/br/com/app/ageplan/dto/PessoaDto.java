@@ -3,6 +3,7 @@ package br.com.app.ageplan.dto;
 
 import br.com.app.ageplan.entity.Endereco;
 import br.com.app.ageplan.entity.Escolaridade;
+import br.com.app.ageplan.entity.OrgaoInstituicaoEmpresa;
 import br.com.app.ageplan.entity.Pessoa;
 import lombok.Getter;
 
@@ -36,11 +37,11 @@ public class PessoaDto implements Serializable {
 
     private Endereco endereco;
     private Escolaridade escolaridade;
+    private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public PessoaDto() {
-    }
+    public PessoaDto() {}
     /*----------------------------------------------------------*/
     // Construtor com argumentos
 
@@ -56,7 +57,8 @@ public class PessoaDto implements Serializable {
                      String telefoneCelular,
                      String telefoneFixo,
                      Endereco endereco,
-                        Escolaridade escolaridade
+                     Escolaridade escolaridade,
+                     OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa
     ) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
@@ -71,6 +73,8 @@ public class PessoaDto implements Serializable {
         this.telefoneFixo = telefoneFixo;
         this.endereco = endereco;
         this.escolaridade = escolaridade;
+        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
+
     }
 
     /*----------------------------------------------------------*/
@@ -90,6 +94,7 @@ public class PessoaDto implements Serializable {
         telefoneFixo = entity.getTelefoneFixo();
         endereco = entity.getEndereco();
         escolaridade = entity.getEscolaridade();
+        orgaoInstituicaoEmpresa = entity.getOrgaoInstituicaoEmpresa();
     }
 
     /*----------------------------------------------------------*/
@@ -127,12 +132,8 @@ public class PessoaDto implements Serializable {
     public void setTelefoneFixo(String telefoneFixo) {
         this.telefoneFixo = telefoneFixo;
     }
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
-    public void setEscolaridade(Escolaridade escolaridade) {
-        this.escolaridade = escolaridade;
-    }
+    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
+    public void setEscolaridade(Escolaridade escolaridade) { this.escolaridade = escolaridade;}
+    public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) { this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa; }
 
 }

@@ -43,6 +43,7 @@ public class PessoaService {
         entity.setTelefoneFixo(dto.getTelefoneFixo());
         entity.setEndereco(dto.getEndereco());
         entity.setEscolaridade(dto.getEscolaridade());
+        entity.setOrgaoInstituicaoEmpresa(dto.getOrgaoInstituicaoEmpresa());
 
         entity = repository.save(entity);
 
