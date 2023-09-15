@@ -46,7 +46,9 @@ public class Pessoa implements Serializable {
     private Escolaridade escolaridade;
 
 //    private NivelSerieEscolaridade nivelSerieEscolaridade;
-//    private ProfissaoCargoFuncao profissaoCargoFuncao;
+    @ManyToOne
+    @JoinColumn(name = "id_profissao_cargo_funcao_fk")
+    private ProfissaoCargoFuncao profissaoCargoFuncao;
 
     @ManyToOne
     @JoinColumn(name = "id_orgao_instituicao_empresa_fk")

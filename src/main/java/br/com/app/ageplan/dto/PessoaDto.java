@@ -1,10 +1,7 @@
 package br.com.app.ageplan.dto;
 
 
-import br.com.app.ageplan.entity.Endereco;
-import br.com.app.ageplan.entity.Escolaridade;
-import br.com.app.ageplan.entity.OrgaoInstituicaoEmpresa;
-import br.com.app.ageplan.entity.Pessoa;
+import br.com.app.ageplan.entity.*;
 import lombok.Getter;
 
 import java.io.Serial;
@@ -38,6 +35,7 @@ public class PessoaDto implements Serializable {
     private Endereco endereco;
     private Escolaridade escolaridade;
     private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
+    private ProfissaoCargoFuncao profissaoCargoFuncao;
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
@@ -59,7 +57,8 @@ public class PessoaDto implements Serializable {
                      String telefoneFixo,
                      Endereco endereco,
                      Escolaridade escolaridade,
-                     OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa
+                     OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa,
+                        ProfissaoCargoFuncao profissaoCargoFuncao
     ) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
@@ -75,6 +74,7 @@ public class PessoaDto implements Serializable {
         this.endereco = endereco;
         this.escolaridade = escolaridade;
         this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
+        this.profissaoCargoFuncao = profissaoCargoFuncao;
 
     }
 
@@ -96,6 +96,7 @@ public class PessoaDto implements Serializable {
         endereco = entity.getEndereco();
         escolaridade = entity.getEscolaridade();
         orgaoInstituicaoEmpresa = entity.getOrgaoInstituicaoEmpresa();
+        profissaoCargoFuncao = entity.getProfissaoCargoFuncao();
     }
 
     /*----------------------------------------------------------*/
@@ -156,4 +157,7 @@ public class PessoaDto implements Serializable {
         this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
     }
 
+    public void setProfissaoCargoFuncao(ProfissaoCargoFuncao profissaoCargoFuncao) {
+        this.profissaoCargoFuncao = profissaoCargoFuncao;
+    }
 }
