@@ -1,15 +1,10 @@
 package br.com.app.ageplan.dto;
 
 import br.com.app.ageplan.entity.OrgaoInstituicaoEmpresa;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
-import lombok.Value;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * DTO para {@link OrgaoInstituicaoEmpresa}
@@ -28,7 +23,8 @@ public class OrgaoInstituicaoEmpresaDto implements Serializable {
     private String sigla;
 
     /*--------------------- Construtor vazio -------------------*/
-    public OrgaoInstituicaoEmpresaDto() {}
+    public OrgaoInstituicaoEmpresaDto() {
+    }
 
     /*--------------------- Construtor com parâmetros -------------------*/
     public OrgaoInstituicaoEmpresaDto(Long id, String nomeDescricao, String sigla) {

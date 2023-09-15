@@ -21,7 +21,8 @@ public class ProfissaoCargoFuncao implements Serializable {
 
     /*--------------------------------------------------------*/
     // Construtor vazio
-    public ProfissaoCargoFuncao() {}
+    public ProfissaoCargoFuncao() {
+    }
 
     /*--------------------------------------------------------*/
     // Construtor com parâmetros
@@ -36,14 +37,14 @@ public class ProfissaoCargoFuncao implements Serializable {
         return id;
     }
 
-    public String getNomeDescricao() {
-        return nomeDescricao;
-    }
-
     /*--------------------------------------------------------*/
     // Setters
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNomeDescricao() {
+        return nomeDescricao;
     }
 
     public void setNomeDescricao(String nomeDescricao) {
@@ -58,6 +59,7 @@ public class ProfissaoCargoFuncao implements Serializable {
         if (!(o instanceof ProfissaoCargoFuncao that)) return false;
         return Objects.equals(getId(), that.getId()) && Objects.equals(getNomeDescricao(), that.getNomeDescricao());
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getNomeDescricao());

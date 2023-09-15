@@ -41,7 +41,8 @@ public class PessoaDto implements Serializable {
 
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public PessoaDto() {}
+    public PessoaDto() {
+    }
     /*----------------------------------------------------------*/
     // Construtor com argumentos
 
@@ -102,38 +103,57 @@ public class PessoaDto implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setNomeCompleto(String nomeCompleto) {
         this.nomeCompleto = nomeCompleto;
     }
+
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
     public void setEstrangeiro(Boolean estrangeiro) {
         this.estrangeiro = estrangeiro;
     }
+
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
+
     public void setRG(String RG) {
         this.RG = RG;
     }
+
     public void setOutrosDocumentos(String outrosDocumentos) {
         this.outrosDocumentos = outrosDocumentos;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
+
     public void setTelefoneCelular(String telefoneCelular) {
         this.telefoneCelular = telefoneCelular;
     }
+
     public void setTelefoneFixo(String telefoneFixo) {
         this.telefoneFixo = telefoneFixo;
     }
-    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
-    public void setEscolaridade(Escolaridade escolaridade) { this.escolaridade = escolaridade;}
-    public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) { this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa; }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setEscolaridade(Escolaridade escolaridade) {
+        this.escolaridade = escolaridade;
+    }
+
+    public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
+        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
+    }
 
 }

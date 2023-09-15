@@ -23,7 +23,8 @@ public class OrgaoInstituicaoEmpresa implements Serializable {
     private String sigla;
 
     // Construtor sem argumentos ou vazio
-    public OrgaoInstituicaoEmpresa() {}
+    public OrgaoInstituicaoEmpresa() {
+    }
 
     // Construtor com argumentos
     public OrgaoInstituicaoEmpresa(Long id, String nomeDescricao, String sigla) {
@@ -36,10 +37,14 @@ public class OrgaoInstituicaoEmpresa implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setNomeDescricao(String nomeDescricao) {
         this.nomeDescricao = nomeDescricao;
     }
-    public void setSigla(String sigla) { this.sigla = sigla; }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
 
     // HashCode & Equals
 

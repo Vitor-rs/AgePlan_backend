@@ -49,6 +49,7 @@ public class TipoLogradouroDto implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setNomeTipoLogradouro(String nomeTipoLogradouro) {
         this.nomeTipoLogradouro = nomeTipoLogradouro;
     }
