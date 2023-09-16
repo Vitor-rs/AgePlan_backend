@@ -21,8 +21,12 @@ public class EscolaridadeService {
     /*---------------------------------------------------------------------------*/
     // Método para evitar repetição de código
     private EscolaridadeDto getEscolaridadeDto(EscolaridadeDto dto, Escolaridade entity) {
-        entity.setId(dto.getId());
         entity.setNomeDescricao(dto.getNomeDescricao());
+        /* Aqui está havendo um erro de conversão de tipo, pois o campo "nivelSerieEscolaridade"
+         * está como String no DTO e como Integer na entidade. Para corrigir, basta converter
+         * o tipo do campo no DTO para Integer.
+        */
+        entity.setNivelSerieEscolaridade(dto.getNivelSerieEscolaridade());
         entity = repository.save(entity);
         return new EscolaridadeDto(entity);
     }

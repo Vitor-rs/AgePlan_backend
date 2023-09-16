@@ -20,6 +20,7 @@ public class EscolaridadeDto implements Serializable {
     private Long id;
 
     private String nomeDescricao;
+    private NivelSerieEscolaridadeDto nivelSerieEscolaridade;
 
     /*--------------------------------------------------------*/
     // Construtor vazio

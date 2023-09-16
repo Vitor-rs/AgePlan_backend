@@ -22,6 +22,10 @@ public class Escolaridade implements Serializable {
     /*--------------------------------------------------------*/
     private String nomeDescricao;
 
+    @ManyToOne
+    @JoinColumn(name = "nivel_serie_escolaridade_id")
+    private NivelSerieEscolaridade nivelSerieEscolaridade;
+
     /*--------------------------------------------------------*/
     // Construtor vazio
     public Escolaridade() {
@@ -38,9 +42,11 @@ public class Escolaridade implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
     public void setNomeDescricao(String nomeDescricao) {
         this.nomeDescricao = nomeDescricao;
+    }
+    public void setNivelSerieEscolaridade(NivelSerieEscolaridade nivelSerieEscolaridade) {
+        this.nivelSerieEscolaridade = nivelSerieEscolaridade;
     }
 
     /*--------------------------------------------------------*/
@@ -50,12 +56,15 @@ public class Escolaridade implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Escolaridade that)) return false;
         return Objects.equals(getId(), that.getId()) &&
-                Objects.equals(getNomeDescricao(), that.getNomeDescricao());
+                Objects.equals(getNomeDescricao(), that.getNomeDescricao()) &&
+                Objects.equals(getNivelSerieEscolaridade(), that.getNivelSerieEscolaridade());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getId(),
-                getNomeDescricao());
+                getNomeDescricao(),
+                getNivelSerieEscolaridade()
+        );
     }
 }

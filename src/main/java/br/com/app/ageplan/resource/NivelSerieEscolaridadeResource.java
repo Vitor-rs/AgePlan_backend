@@ -1,8 +1,7 @@
 package br.com.app.ageplan.resource;
 
-
-import br.com.app.ageplan.dto.OrgaoInstituicaoEmpresaDto;
-import br.com.app.ageplan.service.OrgaoInstituicaoEmpresaService;
+import br.com.app.ageplan.dto.NivelSerieEscolaridadeDto;
+import br.com.app.ageplan.service.NivelSerieEscolaridadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,26 +11,26 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/orgao_instituicao_empresa")
-public class OrgaoInstituicaoEmpresaResource {
+@RequestMapping("/nivel_serie_escolaridade")
+public class NivelSerieEscolaridadeResource {
 
     @Autowired
-    private OrgaoInstituicaoEmpresaService service;
+    private NivelSerieEscolaridadeService service;
 
     @GetMapping
-    public ResponseEntity<List<OrgaoInstituicaoEmpresaDto>> findAll() {
-        List<OrgaoInstituicaoEmpresaDto> list = service.findAll();
+    public ResponseEntity<List<NivelSerieEscolaridadeDto>> findAll() {
+        List<NivelSerieEscolaridadeDto> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<OrgaoInstituicaoEmpresaDto> findById(@PathVariable Long id) {
-        OrgaoInstituicaoEmpresaDto dto = service.findById(id);
+    public ResponseEntity<NivelSerieEscolaridadeDto> findById(@PathVariable Long id) {
+        NivelSerieEscolaridadeDto dto = service.findById(id);
         return ResponseEntity.ok().body(dto);
     }
 
     @PostMapping
-    public ResponseEntity<OrgaoInstituicaoEmpresaDto> insert(@RequestBody OrgaoInstituicaoEmpresaDto dto) {
+    public ResponseEntity<NivelSerieEscolaridadeDto> insert(@RequestBody NivelSerieEscolaridadeDto dto) {
 
         dto = service.insert(dto);
 
@@ -45,9 +44,9 @@ public class OrgaoInstituicaoEmpresaResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<OrgaoInstituicaoEmpresaDto> update(
+    public ResponseEntity<NivelSerieEscolaridadeDto> update(
             @PathVariable Long id,
-            @RequestBody OrgaoInstituicaoEmpresaDto dto) {
+            @RequestBody NivelSerieEscolaridadeDto dto) {
 
         dto = service.update(id, dto);
 
