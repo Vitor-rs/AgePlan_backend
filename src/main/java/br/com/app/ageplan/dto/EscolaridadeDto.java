@@ -1,8 +1,6 @@
 package br.com.app.ageplan.dto;
 
 import br.com.app.ageplan.entity.Escolaridade;
-import br.com.app.ageplan.entity.NivelSerieEscolaridade;
-import lombok.Value;
 
 import java.io.Serial;
 import java.io.Serializable;

@@ -1,36 +1,37 @@
 package br.com.app.ageplan.resource;
 
-import br.com.app.ageplan.dto.PessoaDto;
-import br.com.app.ageplan.service.PessoaService;
+import br.com.app.ageplan.dto.RegistroFrequenciaDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import br.com.app.ageplan.service.RegistroFrequenciaService;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/pessoa")
-public class PessoaResource {
+@RequestMapping(value = "/registro_frequencia")
+public class RegistroFrequenciaResource {
 
     @Autowired
-    private PessoaService service;
+    private RegistroFrequenciaService service;
 
     @GetMapping
-    public ResponseEntity<List<PessoaDto>> findAll() {
-        List<PessoaDto> list = service.findAll();
+    public ResponseEntity<List<RegistroFrequenciaDto>> findAll() {
+        List<RegistroFrequenciaDto> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<PessoaDto> findById(@PathVariable Long id) {
-        PessoaDto dto = service.findById(id);
+    public ResponseEntity<RegistroFrequenciaDto> findById(@PathVariable Long id) {
+        RegistroFrequenciaDto dto = service.findById(id);
         return ResponseEntity.ok().body(dto);
     }
 
     @PostMapping
-    public ResponseEntity<PessoaDto> insert(@RequestBody PessoaDto dto) {
+    public ResponseEntity<RegistroFrequenciaDto> insert(@RequestBody RegistroFrequenciaDto dto) {
 
         dto = service.insert(dto);
 
@@ -44,9 +45,9 @@ public class PessoaResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<PessoaDto> update(
+    public ResponseEntity<RegistroFrequenciaDto> update(
             @PathVariable Long id,
-            @RequestBody PessoaDto dto) {
+            @RequestBody RegistroFrequenciaDto dto) {
 
         dto = service.update(id, dto);
 

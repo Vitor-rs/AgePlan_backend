@@ -5,6 +5,7 @@ import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -53,6 +54,7 @@ public class Pessoa implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_orgao_instituicao_empresa_fk")
     private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
+
 
     // Construtor sem argumentos ou vazio
     public Pessoa() {
@@ -167,26 +169,28 @@ public class Pessoa implements Serializable {
                 Objects.equals(getTelefoneFixo(), pessoa.getTelefoneFixo()) &&
                 Objects.equals(getEndereco(), pessoa.getEndereco()) &&
                 Objects.equals(getEscolaridade(), pessoa.getEscolaridade()) &&
-                Objects.equals(getOrgaoInstituicaoEmpresa(), pessoa.getOrgaoInstituicaoEmpresa()
-                );
+                Objects.equals(getProfissaoCargoFuncao(), pessoa.getProfissaoCargoFuncao()) &&
+                Objects.equals(getOrgaoInstituicaoEmpresa(), pessoa.getOrgaoInstituicaoEmpresa());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(),
+        return Objects.hash(
+                getId(),
                 getNomeCompleto(),
                 getDataNascimento(),
                 getGenero(),
                 getEstrangeiro(),
-                getCPF(), getRG(),
+                getCPF(),
+                getRG(),
                 getOutrosDocumentos(),
                 getEmail(),
                 getTelefoneCelular(),
                 getTelefoneFixo(),
                 getEndereco(),
                 getEscolaridade(),
+                getProfissaoCargoFuncao(),
                 getOrgaoInstituicaoEmpresa()
         );
     }
-
 }

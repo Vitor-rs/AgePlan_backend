@@ -6,6 +6,7 @@ import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * DTO para {@link Pessoa}
@@ -58,7 +59,7 @@ public class PessoaDto implements Serializable {
                      Endereco endereco,
                      Escolaridade escolaridade,
                      OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa,
-                        ProfissaoCargoFuncao profissaoCargoFuncao
+                     ProfissaoCargoFuncao profissaoCargoFuncao
     ) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
@@ -75,7 +76,6 @@ public class PessoaDto implements Serializable {
         this.escolaridade = escolaridade;
         this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
         this.profissaoCargoFuncao = profissaoCargoFuncao;
-
     }
 
     /*----------------------------------------------------------*/
@@ -156,8 +156,8 @@ public class PessoaDto implements Serializable {
     public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
         this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
     }
-
     public void setProfissaoCargoFuncao(ProfissaoCargoFuncao profissaoCargoFuncao) {
         this.profissaoCargoFuncao = profissaoCargoFuncao;
     }
+
 }
