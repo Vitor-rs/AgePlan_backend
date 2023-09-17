@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class PessoaService {
-
     /**
      * Injeção de dependência para o repositório PessoaRepository usando a anotação @Autowired do Spring
      * O Spring vai se encarregar de criar uma instância de PessoaRepository e injetar no atributo repository

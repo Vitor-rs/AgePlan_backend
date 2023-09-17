@@ -1,51 +1,43 @@
 package br.com.app.ageplan.dto;
 
 import br.com.app.ageplan.entity.Escolaridade;
-import lombok.Getter;
+import br.com.app.ageplan.entity.NivelSerieEscolaridade;
+import lombok.Value;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * DTO para {@link Escolaridade}
+ * DTO para {@link br.com.app.ageplan.entity.Escolaridade}
  */
 
-@Getter
 public class EscolaridadeDto implements Serializable {
     @Serial
-    private final static long serialVersionUID = 1L;
-    /*--------------------------------------------------------*/
-    // Getters
-    /*--------------------------------------------------------*/
+    private static final long serialVersionUID = 1L;
+
     private Long id;
-
     private String nomeDescricao;
-    private NivelSerieEscolaridadeDto nivelSerieEscolaridade;
-
-    /*--------------------------------------------------------*/
-    // Construtor vazio
-    public EscolaridadeDto() {
-    }
-
-    // Construtor com parâmetros
+    /*----------------------------------------------------------*/
+    // Construtor sem argumentos
+    public EscolaridadeDto() {}
+    /*----------------------------------------------------------*/
+    // Construtor com argumentos
     public EscolaridadeDto(Long id, String nomeDescricao) {
         this.id = id;
         this.nomeDescricao = nomeDescricao;
     }
 
-    /*--------------------------------------------------------*/
-    // Construtor usando a entidade como parâmetro
+    /*----------------------------------------------------------*/
+    // Construtor usando a entidade como argumento
     public EscolaridadeDto(Escolaridade escolaridade) {
         this.id = escolaridade.getId();
         this.nomeDescricao = escolaridade.getNomeDescricao();
     }
 
-    /*--------------------------------------------------------*/
-    // Setters
+    //Setters
     public void setId(Long id) {
         this.id = id;
     }
-
     public void setNomeDescricao(String nomeDescricao) {
         this.nomeDescricao = nomeDescricao;
     }

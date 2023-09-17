@@ -82,21 +82,21 @@ public class PessoaDto implements Serializable {
     // Construtor usando o objeto Pessoa
 
     public PessoaDto(Pessoa entity) {
-        id = entity.getId();
-        nomeCompleto = entity.getNomeCompleto();
-        dataNascimento = entity.getDataNascimento();
-        genero = entity.getGenero();
-        estrangeiro = entity.getEstrangeiro();
-        CPF = entity.getCPF();
-        RG = entity.getRG();
-        outrosDocumentos = entity.getOutrosDocumentos();
-        email = entity.getEmail();
-        telefoneCelular = entity.getTelefoneCelular();
-        telefoneFixo = entity.getTelefoneFixo();
-        endereco = entity.getEndereco();
-        escolaridade = entity.getEscolaridade();
-        orgaoInstituicaoEmpresa = entity.getOrgaoInstituicaoEmpresa();
-        profissaoCargoFuncao = entity.getProfissaoCargoFuncao();
+        this.id = entity.getId();
+        this.nomeCompleto = entity.getNomeCompleto();
+        this.dataNascimento = entity.getDataNascimento();
+        this.genero = entity.getGenero();
+        this.estrangeiro = entity.getEstrangeiro();
+        this.CPF = entity.getCPF();
+        this.RG = entity.getRG();
+        this.outrosDocumentos = entity.getOutrosDocumentos();
+        this.email = entity.getEmail();
+        this.telefoneCelular = entity.getTelefoneCelular();
+        this.telefoneFixo = entity.getTelefoneFixo();
+        this.endereco = entity.getEndereco();
+        this.escolaridade = entity.getEscolaridade();
+        this.orgaoInstituicaoEmpresa = entity.getOrgaoInstituicaoEmpresa();
+        this.profissaoCargoFuncao = entity.getProfissaoCargoFuncao();
     }
 
     /*----------------------------------------------------------*/

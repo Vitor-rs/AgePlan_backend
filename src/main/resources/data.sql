@@ -1,8 +1,6 @@
 insert into tb_tipo_logradouro (nome_tipo_logradouro) values ('Rua');
 insert into tb_tipo_logradouro (nome_tipo_logradouro) values ('Avenida');
 
-
-
 INSERT INTO tb_profissao_cargo_funcao (nome_descricao) VALUES ('Analista de Sistemas');
 INSERT INTO tb_profissao_cargo_funcao (nome_descricao) VALUES ('Analista de Suporte');
 INSERT INTO tb_profissao_cargo_funcao (nome_descricao) VALUES ('Analista de Testes');
