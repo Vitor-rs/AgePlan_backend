@@ -18,7 +18,6 @@ class Pessoa {
     - endereco: Endereco
 
     - escolaridade: Escolaridade
-    - nivelSerieEscolaridade: NivelSerieEscolaridade
     - profissaoCargoFuncao: ProfissaoCargoFuncao
     - orgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
 }
@@ -61,17 +60,28 @@ class ProfissaoCargoFuncao {
     - nomeDescricao: String
 }
 
-class Aluno {
+class RegistroFrequencia {
     - id: Long
-    - matricula: Matricula
-    - contrato: Contrato
-}
- class Professor {
-    - id: Long
-    - especialidade: Especialidade
+    - dataHoraRegistro: LocalDateTime
+    - numeroAula: Integer
+    - presenca: char
+    - conteudoPlanejado: String
+    - conteudoMinistrado: String
+    - observacoesAnotacoes: String
+    - duracaoAula: String
+    - fala: Integer
+    - audicao: Integer
+    - leitura: Integer
+    - escrita: Integer
+    - tarefa: Integer
+    - situacaoTarefa: String
+    - app: String
+    - engajamento: Integer
+    - sala: Integer
 }
 
-Pessoa "*" -- "1" Enderec0o
+
+Pessoa "*" -- "1" Endereco
 Pessoa "*" -- "1" Escolaridade
 Pessoa "*" -- "1" NivelSerieEscolaridade
 Pessoa "*" -- "1" ProfissaoCargoFuncao
