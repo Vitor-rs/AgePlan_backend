@@ -6,15 +6,12 @@ class Pessoa {
     - dataNascimento: Date
     - genero: String
     - estrangeiro: Boolean
-
     - CPF: String
     - RG: String
     - outrosDocumentos: String
-
     - email: String
     - telefoneCelular: String
     - telefoneFixo: String
-
     - endereco: Endereco
     - escolaridade: Escolaridade
     - profissaoCargoFuncao: ProfissaoCargoFuncao
@@ -87,5 +84,7 @@ Pessoa "*" -- "1" ProfissaoCargoFuncao
 Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
 
 Endereco "*" -- "1" TipoLogradouro
+
+RegistroFrequencia "*" -- "1" Pessoa
 
 @enduml
