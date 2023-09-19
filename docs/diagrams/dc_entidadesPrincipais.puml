@@ -16,7 +16,6 @@ class Pessoa {
     - telefoneFixo: String
 
     - endereco: Endereco
-
     - escolaridade: Escolaridade
     - profissaoCargoFuncao: ProfissaoCargoFuncao
     - orgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
@@ -87,6 +86,6 @@ Pessoa "*" -- "1" NivelSerieEscolaridade
 Pessoa "*" -- "1" ProfissaoCargoFuncao
 Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
 
-Endereco *-- TipoLogradouro
+Endereco "*" -- "1" TipoLogradouro
 
 @enduml
