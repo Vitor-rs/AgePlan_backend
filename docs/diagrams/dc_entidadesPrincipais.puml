@@ -77,14 +77,30 @@ class RegistroFrequencia {
 }
 
 
+class Cliente extends Pessoa {
+    - id: Long
+    - responsavel: Pessoa
+    - matricula: String
+    - contrato: String
+    - login: String
+    - senha: String
+}
+
+class Professor extends Pessoa {
+    - id: Long
+    - especialidade: String
+    - login: String
+    - senha: String
+}
+
+
+
+
 Pessoa "*" -- "1" Endereco
 Pessoa "*" -- "1" Escolaridade
 Pessoa "*" -- "1" NivelSerieEscolaridade
 Pessoa "*" -- "1" ProfissaoCargoFuncao
 Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
-
 Endereco "*" -- "1" TipoLogradouro
-
-RegistroFrequencia "*" -- "1" Pessoa
 
 @enduml

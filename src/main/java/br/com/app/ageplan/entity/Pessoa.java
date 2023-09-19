@@ -1,17 +1,28 @@
 package br.com.app.ageplan.entity;
 
 import jakarta.persistence.*;
+
 import lombok.Getter;
 
 import java.io.Serial;
+
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
+
+
+/**
+ * A classe Pessoa é uma classe abstrata, pois não faz sentido instanciar um objeto Pessoa.
+ * A classe Pessoa é uma superclasse de Cliente e Professor.
+ * Ao declarar a classe Pessoa como abstrata, segundo a arquitetura de camadas MVC ORM do Spring,
+ * a classe Pessoa não será mapeada para o banco de dados. Somente as classes Cliente e Professor serão mapeadas.
+ * Das camadas Dto, Repository, Service e Resource (Controller), a entity abstrata Pessoa apenas terá um Dto.
+ */
 
 @Getter
 @Entity
 @Table(name = "tb_pessoa")
-public class Pessoa implements Serializable {
+
+public abstract class Pessoa implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     /*----------------------------------------------------------*/
