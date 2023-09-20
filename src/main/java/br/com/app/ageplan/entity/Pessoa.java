@@ -22,7 +22,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_pessoa")
 
-public abstract class Pessoa implements Serializable {
+public class Pessoa implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     /*----------------------------------------------------------*/
