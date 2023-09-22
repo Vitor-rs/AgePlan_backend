@@ -1,11 +1,10 @@
 package br.com.app.ageplan.resource;
 
 import br.com.app.ageplan.dto.RegistroFrequenciaDto;
+import br.com.app.ageplan.service.RegistroFrequenciaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import br.com.app.ageplan.service.RegistroFrequenciaService;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;

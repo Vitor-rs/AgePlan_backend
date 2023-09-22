@@ -1,8 +1,7 @@
 package br.com.app.ageplan.dto;
 
-import lombok.Getter;
-
 import br.com.app.ageplan.entity.ProfissaoCargoFuncao;
+import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -20,7 +19,8 @@ public class ProfissaoCargoFuncaoDto implements Serializable {
     private String nomeDescricao;
 
     // Construtor vazio
-    public ProfissaoCargoFuncaoDto() {}
+    public ProfissaoCargoFuncaoDto() {
+    }
 
     // Construtor com parâmetros
     public ProfissaoCargoFuncaoDto(Long id, String nomeDescricao) {

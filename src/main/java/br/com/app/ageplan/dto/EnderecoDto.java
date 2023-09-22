@@ -2,7 +2,10 @@ package br.com.app.ageplan.dto;
 
 import br.com.app.ageplan.entity.Endereco;
 import br.com.app.ageplan.entity.TipoLogradouro;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,6 +15,9 @@ import java.io.Serializable;
  */
 
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class EnderecoDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -34,37 +40,6 @@ public class EnderecoDto implements Serializable {
     private TipoLogradouro tipoLogradouro;
 
     /*------------------------------------------------------------*/
-    // Construtor sem argumentos
-    public EnderecoDto() {
-    }
-
-    /*------------------------------------------------------------*/
-    // Construtor com argumentos
-    public EnderecoDto(
-            Long id,
-            String CEP,
-            String nomeLogradouro,
-            Integer numero,
-            String complemento,
-            String bairro,
-            String cidade,
-            String estado,
-            String pais,
-            TipoLogradouro tipoLogradouro
-    ) {
-        this.id = id;
-        this.CEP = CEP;
-        this.nomeLogradouro = nomeLogradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.pais = pais;
-        this.tipoLogradouro = tipoLogradouro;
-    }
-
-    /*------------------------------------------------------------*/
     // Construtor usando objeto Endereco como argumento
     public EnderecoDto(Endereco endereco) {
         this.id = endereco.getId();
@@ -77,48 +52,6 @@ public class EnderecoDto implements Serializable {
         this.estado = endereco.getEstado();
         this.pais = endereco.getPais();
         this.tipoLogradouro = endereco.getTipoLogradouro();
-    }
-
-    /*------------------------------------------------------------*/
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setCEP(String CEP) {
-        this.CEP = CEP;
-    }
-
-    public void setNomeLogradouro(String nomeLogradouro) {
-        this.nomeLogradouro = nomeLogradouro;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
-        this.tipoLogradouro = tipoLogradouro;
     }
 
 }

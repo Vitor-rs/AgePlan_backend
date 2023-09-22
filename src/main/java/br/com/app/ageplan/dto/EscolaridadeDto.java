@@ -15,9 +15,12 @@ public class EscolaridadeDto implements Serializable {
 
     private Long id;
     private String nomeDescricao;
+
     /*----------------------------------------------------------*/
     // Construtor sem argumentos
-    public EscolaridadeDto() {}
+    public EscolaridadeDto() {
+    }
+
     /*----------------------------------------------------------*/
     // Construtor com argumentos
     public EscolaridadeDto(Long id, String nomeDescricao) {
@@ -36,6 +39,7 @@ public class EscolaridadeDto implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setNomeDescricao(String nomeDescricao) {
         this.nomeDescricao = nomeDescricao;
     }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.Serial;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -70,7 +69,7 @@ public class RegistroFrequenciaService {
     }
 
     @Transactional
-public RegistroFrequenciaDto update(Long id, RegistroFrequenciaDto dto) {
+    public RegistroFrequenciaDto update(Long id, RegistroFrequenciaDto dto) {
         try {
             RegistroFrequencia entity = repository.getReferenceById(id);
             return getRegistroFrequenciaDto(dto, entity);

@@ -1,6 +1,9 @@
 package br.com.app.ageplan.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 
 import java.io.Serial;
@@ -19,26 +22,27 @@ public class RegistroFrequencia implements Serializable {
     private Long id;
     /*--------------------------------------------------------------*/
 
-	private LocalDateTime dataHoraRegistro;
-	private Integer numeroAula;
-	private char presenca;
-	private String conteudoPlanejado;
+    private LocalDateTime dataHoraRegistro;
+    private Integer numeroAula;
+    private char presenca;
+    private String conteudoPlanejado;
     private String conteudoMinistrado;
-	private String observacoesAnotacoes;
-	private String duracaoAula;
-	private Integer fala;
-	private Integer audicao;
-	private Integer leitura;
-	private Integer escrita;
-	private Integer tarefa;
-	private String situacaoTarefa;
-	private String app;
-	private Integer engajamento;
-	private Integer sala;
+    private String observacoesAnotacoes;
+    private String duracaoAula;
+    private Integer fala;
+    private Integer audicao;
+    private Integer leitura;
+    private Integer escrita;
+    private Integer tarefa;
+    private String situacaoTarefa;
+    private String app;
+    private Integer engajamento;
+    private Integer sala;
 
     /*--------------------------------------------------------------*/
     // Construtor vazio
-    public RegistroFrequencia() {}
+    public RegistroFrequencia() {
+    }
 
     /*--------------------------------------------------------------*/
     // Construtor com parâmetros
@@ -82,51 +86,67 @@ public class RegistroFrequencia implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setDataHoraRegistro(LocalDateTime dataHoraRegistro) {
         this.dataHoraRegistro = dataHoraRegistro;
     }
+
     public void setNumeroAula(Integer numeroAula) {
         this.numeroAula = numeroAula;
     }
+
     public void setPresenca(char presenca) {
         this.presenca = presenca;
     }
+
     public void setConteudoPlanejado(String conteudoPlanejado) {
         this.conteudoPlanejado = conteudoPlanejado;
     }
+
     public void setConteudoMinistrado(String conteudoMinistrado) {
         this.conteudoMinistrado = conteudoMinistrado;
     }
+
     public void setObservacoesAnotacoes(String observacoesAnotacoes) {
         this.observacoesAnotacoes = observacoesAnotacoes;
     }
+
     public void setDuracaoAula(String duracaoAula) {
         this.duracaoAula = duracaoAula;
     }
+
     public void setFala(Integer fala) {
         this.fala = fala;
     }
+
     public void setAudicao(Integer audicao) {
         this.audicao = audicao;
     }
+
     public void setLeitura(Integer leitura) {
         this.leitura = leitura;
     }
+
     public void setEscrita(Integer escrita) {
         this.escrita = escrita;
     }
+
     public void setTarefa(Integer tarefa) {
         this.tarefa = tarefa;
     }
+
     public void setSituacaoTarefa(String situacaoTarefa) {
         this.situacaoTarefa = situacaoTarefa;
     }
+
     public void setApp(String app) {
         this.app = app;
     }
+
     public void setEngajamento(Integer engajamento) {
         this.engajamento = engajamento;
     }
+
     public void setSala(Integer sala) {
         this.sala = sala;
     }

@@ -5,7 +5,6 @@ import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -39,6 +38,7 @@ public class Escolaridade implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setNomeDescricao(String nomeDescricao) {
         this.nomeDescricao = nomeDescricao;
     }

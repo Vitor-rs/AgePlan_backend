@@ -1,13 +1,11 @@
 package br.com.app.ageplan.dto;
 
-import br.com.app.ageplan.entity.Pessoa;
 import br.com.app.ageplan.entity.RegistroFrequencia;
 import lombok.Getter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * DTO para {@link RegistroFrequencia}
@@ -38,7 +36,9 @@ public class RegistroFrequenciaDto implements Serializable {
 
     /*--------------------------------------------------------------*/
     // Construtor vazio
-    public RegistroFrequenciaDto() {}
+    public RegistroFrequenciaDto() {
+    }
+
     /*--------------------------------------------------------------*/
     // Construtor com parâmetros formatado como na entity
     public RegistroFrequenciaDto(
@@ -105,49 +105,67 @@ public class RegistroFrequenciaDto implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setDataHoraRegistro(LocalDateTime dataHoraRegistro) {
         this.dataHoraRegistro = dataHoraRegistro;
     }
+
     public void setNumeroAula(Integer numeroAula) {
         this.numeroAula = numeroAula;
     }
+
     public void setPresenca(char presenca) {
         this.presenca = presenca;
     }
+
     public void setConteudoPlanejado(String conteudoPlanejado) {
         this.conteudoPlanejado = conteudoPlanejado;
     }
+
     public void setConteudoMinistrado(String conteudoMinistrado) {
         this.conteudoMinistrado = conteudoMinistrado;
     }
-    public void setObservacoesAnotacoes(String observacoesAnotacoes) { this.observacoesAnotacoes = observacoesAnotacoes; }
+
+    public void setObservacoesAnotacoes(String observacoesAnotacoes) {
+        this.observacoesAnotacoes = observacoesAnotacoes;
+    }
+
     public void setDuracaoAula(String duracaoAula) {
         this.duracaoAula = duracaoAula;
     }
+
     public void setFala(Integer fala) {
         this.fala = fala;
     }
+
     public void setAudicao(Integer audicao) {
         this.audicao = audicao;
     }
+
     public void setLeitura(Integer leitura) {
         this.leitura = leitura;
     }
+
     public void setEscrita(Integer escrita) {
         this.escrita = escrita;
     }
+
     public void setTarefa(Integer tarefa) {
         this.tarefa = tarefa;
     }
+
     public void setSituacaoTarefa(String situacaoTarefa) {
         this.situacaoTarefa = situacaoTarefa;
     }
+
     public void setApp(String app) {
         this.app = app;
     }
+
     public void setEngajamento(Integer engajamento) {
         this.engajamento = engajamento;
     }
+
     public void setSala(Integer sala) {
         this.sala = sala;
     }

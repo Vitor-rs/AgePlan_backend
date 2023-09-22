@@ -1,7 +1,10 @@
 package br.com.app.ageplan.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -9,6 +12,9 @@ import java.util.Objects;
 
 @Entity
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tb_endereco")
 public class Endereco implements Serializable {
     @Serial
@@ -40,79 +46,6 @@ public class Endereco implements Serializable {
     @JsonIgnore
     private List<Pessoa> pessoas;
 */
-
-    /*----------------------------------------------------------*/
-    // Construtor sem argumentos
-    public Endereco() {
-    }
-
-    /*----------------------------------------------------------*/
-    // Construtor com argumentos
-    public Endereco(Long id,
-                    String CEP,
-                    String nomeLogradouro,
-                    Integer numero,
-                    String complemento,
-                    String bairro,
-                    String cidade,
-                    String estado,
-                    String pais,
-                    TipoLogradouro tipoLogradouro
-    ) {
-        this.id = id;
-
-        this.CEP = CEP;
-        this.nomeLogradouro = nomeLogradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.pais = pais;
-        this.tipoLogradouro = tipoLogradouro;
-    }
-
-    /*----------------------------------------------------------*/
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setCEP(String CEP) {
-        this.CEP = CEP;
-    }
-
-    public void setNomeLogradouro(String nomeLogradouro) {
-        this.nomeLogradouro = nomeLogradouro;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
-        this.tipoLogradouro = tipoLogradouro;
-    }
 
     /* ----------------------------------------------------------
      * equals() e hashCode()

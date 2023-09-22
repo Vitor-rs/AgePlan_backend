@@ -22,7 +22,8 @@ public class ProfissaoCargoFuncao implements Serializable {
 
     /*--------------------------------------------------------*/
     // Construtor vazio
-    public ProfissaoCargoFuncao() {}
+    public ProfissaoCargoFuncao() {
+    }
 
     /*--------------------------------------------------------*/
     // Construtor com parâmetros
@@ -36,6 +37,7 @@ public class ProfissaoCargoFuncao implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public void setNomeDescricao(String nomeDescricao) {
         this.nomeDescricao = nomeDescricao;
     }
