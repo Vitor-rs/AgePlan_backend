@@ -77,22 +77,30 @@ class RegistroFrequencia {
 }
 
 
-class Cliente extends Pessoa {
-    - id: Long
-    - responsavel: Pessoa
-    - matricula: String
-    - contrato: String
-    - login: String
-    - senha: String
+class Contrato {
+    id: Long
+    situacao: String
+    dataInicio: Date
+    dataTermino: Date
+    dataCancelamento: Date
+    dataTrancamento: Date
+    contratante: Pessoa
+
 }
 
-class Professor extends Pessoa {
-    - id: Long
-    - especialidade: String
-    - login: String
-    - senha: String
+class Matricula {
+    id: Long
+    atual: Boolean
+    dataInicio: Date
+    dataTermino: Date
+    professor: Pessoa
 }
 
+
+
+Pessoa "1" -- "1" Contrato
+Contrato "1" -- "1" Matricula
+Matricula "1" -- "1" Curso
 
 
 
@@ -102,5 +110,7 @@ Pessoa "*" -- "1" NivelSerieEscolaridade
 Pessoa "*" -- "1" ProfissaoCargoFuncao
 Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
 Endereco "*" -- "1" TipoLogradouro
+
+
 
 @enduml
