@@ -1,13 +1,13 @@
 //package br.com.app.ageplan.dto;
 //
-//import br.com.app.ageplan.entity.Cliente;
+//import br.com.app.ageplan.entity.Aluno;
 //import lombok.Getter;
 //
 //import java.io.Serial;
 //import java.io.Serializable;
 //
 ///**
-// * DTO para {@link br.com.app.ageplan.entity.Cliente}
+// * DTO para {@link br.com.app.ageplan.entity.Aluno}
 // */
 //
 //
@@ -43,8 +43,8 @@
 //        this.senha = senha;
 //    }
 //
-//    // Construtor usando a entidade Cliente
-//    public ClienteDto(Cliente cliente) {
+//    // Construtor usando a entidade Aluno
+//    public ClienteDto(Aluno cliente) {
 //        this.id = cliente.getId();
 //        this.matricula = cliente.getMatricula();
 //        this.contrato = cliente.getContrato();

@@ -13,9 +13,9 @@ import java.util.Objects;
 
 /**
  * A classe Pessoa é uma classe abstrata, pois não faz sentido instanciar um objeto Pessoa.
- * A classe Pessoa é uma superclasse de Cliente e Professor.
+ * A classe Pessoa é uma superclasse de Aluno e Professor.
  * Ao declarar a classe Pessoa como abstrata, segundo a arquitetura de camadas MVC ORM do Spring,
- * a classe Pessoa não será mapeada para o banco de dados. Somente as classes Cliente e Professor serão mapeadas.
+ * a classe Pessoa não será mapeada para o banco de dados. Somente as classes Aluno e Professor serão mapeadas.
  * Das camadas Dto, Repository, Service e Resource (Controller), a entity abstrata Pessoa apenas terá um Dto.
  */
 
