@@ -13,21 +13,19 @@ import java.util.Objects;
 public class Escolaridade implements Serializable {
     @Serial
     private final static long serialVersionUID = 1L;
-    /*--------------------------------------------------------*/
-    // Getters
-    /*--------------------------------------------------------*/
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    /*--------------------------------------------------------*/
-    private String nomeDescricao;
 
     /*--------------------------------------------------------*/
-    // Construtor vazio
+
+    private String nomeDescricao;
+
     public Escolaridade() {
     }
 
-    // Construtor com parâmetros
+
     public Escolaridade(Long id, String nomeDescricao) {
         this.id = id;
         this.nomeDescricao = nomeDescricao;

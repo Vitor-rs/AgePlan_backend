@@ -1,6 +1,21 @@
 @startuml
 
-class Pessoa {
+
+entity Usuario {
+    - id: Long
+    - nomeUsuario: String
+    - senha: String
+    - email: String
+    - dataHoraCriacao: LocalDateTime
+    - dataHoraUltimoAcesso: LocalDateTime
+    - dataHoraUltimaAlteracao: LocalDateTime
+    - dataHoraExclusao: LocalDateTime
+    - situacao: String
+}
+
+
+
+abstract class Pessoa {
     - id: Long
     - nomeCompleto: String
     - dataNascimento: Date
@@ -9,12 +24,10 @@ class Pessoa {
     - CPF: String
     - RG: String
     - outrosDocumentos: String
-    - email: String
     - telefoneCelular: String
     - telefoneFixo: String
     - endereco: Endereco
     - escolaridade: Escolaridade
-    - profissaoCargoFuncao: ProfissaoCargoFuncao
     - orgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
 }
 
@@ -56,26 +69,6 @@ class ProfissaoCargoFuncao {
     - nomeDescricao: String
 }
 
-class RegistroFrequencia {
-    - id: Long
-    - dataHoraRegistro: LocalDateTime
-    - numeroAula: Integer
-    - presenca: char
-    - conteudoPlanejado: String
-    - conteudoMinistrado: String
-    - observacoesAnotacoes: String
-    - duracaoAula: String
-    - fala: Integer
-    - audicao: Integer
-    - leitura: Integer
-    - escrita: Integer
-    - tarefa: Integer
-    - situacaoTarefa: String
-    - app: String
-    - engajamento: Integer
-    - sala: Integer
-}
-
 
 class Contrato {
    - id: Long
@@ -85,7 +78,6 @@ class Contrato {
    - dataCancelamento: Date
    - dataTrancamento: Date
    - contratante: Pessoa
-
 }
 
 class Matricula {
@@ -96,17 +88,65 @@ class Matricula {
    - professor: Pessoa
 }
 
+class Curso {
+   - id: Long
+   - nome: String
+   - descricao: String
+   - cargaHoraria: Integer
+   - nivelSerieEscolaridade: NivelSerieEscolaridade
+}
+
 Pessoa "1" -- "1" Contrato
 Contrato "1" -- "1" Matricula
 Matricula "1" -- "1" Curso
 
-
-Pessoa "*" -- "1" Endereco
-Pessoa "*" -- "1" Escolaridade
-Pessoa "*" -- "1" NivelSerieEscolaridade
-Pessoa "*" -- "1" ProfissaoCargoFuncao
-Pessoa "*" -- "1" OrgaoInstituicaoEmpresa
+Pessoa "*" - "1" Endereco
+Pessoa "*" - "1" Escolaridade
+Pessoa "*" - "1" NivelSerieEscolaridade
+Pessoa "*" - "1" OrgaoInstituicaoEmpresa
+Usuario <|- Pessoa
 Endereco "*" -- "1" TipoLogradouro
+
+class Professor {
+    - id: Long
+    - especialidade: String
+}
+
+class Aluno {
+    - id: Long
+    - profissaoCargoFuncao: ProfissaoCargoFuncao
+    - contrato: Contrato
+}
+
+Aluno "*" -- "1" ProfissaoCargoFuncao
+
+class Administrador {
+    - id: Long
+}
+
+class Financeiro {
+    - id: Long
+}
+
+Pessoa <|-- Aluno
+Pessoa <|-- Professor
+Pessoa <|-- Administrador
+Pessoa <|-- Financeiro
+
+class Role {
+    - id: Long
+    - nome: String
+}
+
+'Classe associativa para relacionamento N:N entre Usuario e Role
+class UsuarioRole {
+    - id: Long
+    - usuario: Usuario
+    - role: Role
+}
+
+Usuario "1" -- "*" UsuarioRole
+Role "1" -- "*" UsuarioRole
 
 
 
