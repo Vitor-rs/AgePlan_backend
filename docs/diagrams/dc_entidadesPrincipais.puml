@@ -78,30 +78,27 @@ class RegistroFrequencia {
 
 
 class Contrato {
-    id: Long
-    situacao: String
-    dataInicio: Date
-    dataTermino: Date
-    dataCancelamento: Date
-    dataTrancamento: Date
-    contratante: Pessoa
+   - id: Long
+   - situacao: String
+   - dataInicio: Date
+   - dataTermino: Date
+   - dataCancelamento: Date
+   - dataTrancamento: Date
+   - contratante: Pessoa
 
 }
 
 class Matricula {
-    id: Long
-    atual: Boolean
-    dataInicio: Date
-    dataTermino: Date
-    professor: Pessoa
+   - id: Long
+   - atual: Boolean
+   - dataInicio: Date
+   - dataTermino: Date
+   - professor: Pessoa
 }
-
-
 
 Pessoa "1" -- "1" Contrato
 Contrato "1" -- "1" Matricula
 Matricula "1" -- "1" Curso
-
 
 
 Pessoa "*" -- "1" Endereco

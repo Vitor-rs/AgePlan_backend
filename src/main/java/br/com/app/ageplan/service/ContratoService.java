@@ -1,16 +1,13 @@
 package br.com.app.ageplan.service;
 
 import br.com.app.ageplan.dto.ContratoDto;
-import br.com.app.ageplan.dto.PessoaDto;
 import br.com.app.ageplan.entity.Contrato;
-import br.com.app.ageplan.entity.Pessoa;
 import br.com.app.ageplan.repository.ContratoRepository;
 import br.com.app.ageplan.service.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -33,7 +30,6 @@ public class ContratoService {
 
         return new ContratoDto(entity);
     }
-
 
     @Transactional(readOnly = true)
     public List<ContratoDto> findAll() {

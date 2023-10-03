@@ -46,6 +46,11 @@ public class Contrato implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getSituacao(), getDataInicio(), getDataTermino(), getDataCancelamento(), getDataTrancamento());
+        return Objects.hash(getId(),
+                getSituacao(),
+                getDataInicio(),
+                getDataTermino(),
+                getDataCancelamento(),
+                getDataTrancamento());
     }
 }

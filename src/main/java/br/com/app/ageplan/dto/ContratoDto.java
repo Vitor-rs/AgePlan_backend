@@ -1,12 +1,14 @@
 package br.com.app.ageplan.dto;
 
-import lombok.*;
+import br.com.app.ageplan.entity.Contrato;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
-
-import br.com.app.ageplan.entity.*;
 
 /**
  * DTO para {@link Contrato}
