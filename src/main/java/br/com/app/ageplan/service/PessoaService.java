@@ -56,21 +56,6 @@ public class PessoaService {
     public List<PessoaDto> findAll() {
         List<Pessoa> lista = repository.findAll();
         return lista.stream().map(PessoaDto::new).collect(Collectors.toList());
-        /*
-         Outra forma de fazer a mesma coisa:
-         return lista.stream().map(PessoaDto::new).collect(Collectors.toList());
-         Essa forma é mais enxuta, mas pode ser mais difícil de entender.
-         A expressão lambda (x -> new PessoaDto(x)) é equivalente a PessoaDto::new
-         pode ser lida como "para cada elemento x da lista, crie um novo objeto PessoaDto
-         com o elemento x como argumento do construtor".
-         Se usam esses dois pontos duplos (::) para referenciar um construtor ou um método.
-         Na prática, é como se você tivesse escrito o código abaixo:
-            List<PessoaDto> listaDto = new ArrayList<>();
-            for (Pessoa x : lista) {
-                listaDto.add(new PessoaDto(x));
-            }
-            return listaDto;
-        */
     }
 
     @Transactional(readOnly = true)

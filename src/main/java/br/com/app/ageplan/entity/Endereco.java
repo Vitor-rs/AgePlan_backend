@@ -39,17 +39,6 @@ public class Endereco implements Serializable {
     @JoinColumn(name = "tipo_logradouro_id_fk")
     private TipoLogradouro tipoLogradouro;
 
-    /*----------------------------------------------------------*/
-    // Associação com a classe Pessoa
-/*
-    @OneToMany(mappedBy = "endereco", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<Pessoa> pessoas;
-*/
-
-    /* ----------------------------------------------------------
-     * equals() e hashCode()
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

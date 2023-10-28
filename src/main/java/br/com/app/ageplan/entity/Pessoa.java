@@ -10,7 +10,6 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
  * A classe Pessoa é uma classe abstrata, pois não faz sentido instanciar um objeto Pessoa.
  * A classe Pessoa é uma superclasse de Aluno e Professor.
@@ -18,7 +17,6 @@ import java.util.Objects;
  * a classe Pessoa não será mapeada para o banco de dados. Somente as classes Aluno e Professor serão mapeadas.
  * Das camadas Dto, Repository, Service e Resource (Controller), a entity abstrata Pessoa apenas terá um Dto.
  */
-
 
 @Entity
 @Getter
@@ -29,10 +27,11 @@ import java.util.Objects;
 public class Pessoa implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-    /*----------------------------------------------------------*/
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    /*----------------------------------------------------------*/
 
     // Dados Pessoais
     private String nomeCompleto;
