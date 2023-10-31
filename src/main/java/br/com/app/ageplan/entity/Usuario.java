@@ -63,11 +63,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
-@Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tb_usuario")
+// A classe Pessoa está herdando da classe Usuario, logo a anonotation @Inheritance é necessária
+@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public class Usuario implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -88,11 +89,11 @@ public class Usuario implements Serializable {
     /*------------------------------------------------------------------*/
     // A classe associativa UsuarioRole é criada para representar o relacionamento N:N entre Usuario e Role
 
-    @ManyToMany
-    @JoinTable(name = "tb_usuario_role",
-            joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Role> roles;
+//    @ManyToMany
+//    @JoinTable(name = "tb_usuario_role",
+//            joinColumns = @JoinColumn(name = "usuario_id"),
+//            inverseJoinColumns = @JoinColumn(name = "role_id"))
+//    private List<Role> roles;
 
     // Setters
 
@@ -128,9 +129,9 @@ public class Usuario implements Serializable {
         this.situacao = situacao;
     }
 
-    public void setRoles(List<Role> roles) {
+    /*public void setRoles(List<Role> roles) {
         this.roles = roles;
-    }
+    }*/
 
 
     // Equals e HashCode
@@ -148,8 +149,7 @@ public class Usuario implements Serializable {
                 Objects.equals(getDataHoraUltimoAcesso(), usuario.getDataHoraUltimoAcesso()) &&
                 Objects.equals(getDataHoraUltimaAlteracao(), usuario.getDataHoraUltimaAlteracao()) &&
                 Objects.equals(getDataHoraExclusao(), usuario.getDataHoraExclusao()) &&
-                Objects.equals(getSituacao(), usuario.getSituacao()) &&
-                Objects.equals(getRoles(), usuario.getRoles());
+                Objects.equals(getSituacao(), usuario.getSituacao());
     }
 
     @Override
@@ -163,7 +163,6 @@ public class Usuario implements Serializable {
                 getDataHoraUltimoAcesso(),
                 getDataHoraUltimaAlteracao(),
                 getDataHoraExclusao(),
-                getSituacao(),
-                getRoles());
+                getSituacao());
     }
 }

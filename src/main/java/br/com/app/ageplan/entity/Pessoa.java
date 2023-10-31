@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -18,16 +17,16 @@ import java.util.Objects;
  * Das camadas Dto, Repository, Service e Resource (Controller), a entity abstrata Pessoa apenas terá um Dto.
  */
 
-@Entity
+
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tb_pessoa")
-public class Pessoa implements Serializable {
+@MappedSuperclass
+public abstract class Pessoa implements Serializable {
+    /*----------------------------------------------------------*/
     @Serial
     private static final long serialVersionUID = 1L;
-
+    /*----------------------------------------------------------*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
