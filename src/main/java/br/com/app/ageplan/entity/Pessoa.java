@@ -5,32 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.io.Serial;
-import java.io.Serializable;
 import java.util.Objects;
-
-/**
- * A classe Pessoa é uma classe abstrata, pois não faz sentido instanciar um objeto Pessoa.
- * A classe Pessoa é uma superclasse de Aluno e Professor.
- * Ao declarar a classe Pessoa como abstrata, segundo a arquitetura de camadas MVC ORM do Spring,
- * a classe Pessoa não será mapeada para o banco de dados. Somente as classes Aluno e Professor serão mapeadas.
- * Das camadas Dto, Repository, Service e Resource (Controller), a entity abstrata Pessoa apenas terá um Dto.
- */
-
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@MappedSuperclass
-public abstract class Pessoa implements Serializable {
-    /*----------------------------------------------------------*/
-    @Serial
-    private static final long serialVersionUID = 1L;
-    /*----------------------------------------------------------*/
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    /*----------------------------------------------------------*/
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Pessoa extends Usuario {
 
     // Dados Pessoais
     private String nomeCompleto;
@@ -68,6 +49,65 @@ public abstract class Pessoa implements Serializable {
     @JoinColumn(name = "id_orgao_instituicao_empresa_fk")
     private OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa;
 
+    // Setters
+
+
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setEstrangeiro(Boolean estrangeiro) {
+        this.estrangeiro = estrangeiro;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
+    public void setRG(String RG) {
+        this.RG = RG;
+    }
+
+    public void setOutrosDocumentos(String outrosDocumentos) {
+        this.outrosDocumentos = outrosDocumentos;
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelefoneCelular(String telefoneCelular) {
+        this.telefoneCelular = telefoneCelular;
+    }
+
+    public void setTelefoneFixo(String telefoneFixo) {
+        this.telefoneFixo = telefoneFixo;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void setEscolaridade(Escolaridade escolaridade) {
+        this.escolaridade = escolaridade;
+    }
+
+    public void setProfissaoCargoFuncao(ProfissaoCargoFuncao profissaoCargoFuncao) {
+        this.profissaoCargoFuncao = profissaoCargoFuncao;
+    }
+
+    public void setOrgaoInstituicaoEmpresa(OrgaoInstituicaoEmpresa orgaoInstituicaoEmpresa) {
+        this.orgaoInstituicaoEmpresa = orgaoInstituicaoEmpresa;
+    }
 
     /*----------------------------------------------------------*/
     // HashCode e Equals

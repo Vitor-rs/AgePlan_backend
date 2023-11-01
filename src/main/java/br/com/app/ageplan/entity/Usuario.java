@@ -1,57 +1,5 @@
 package br.com.app.ageplan.entity;
 
-/*
-    Documentação de classes relacionadas a Usuario em PlantUml e estratégias de relacionamento:
-
-
-    entity Usuario {
-    - id: Long
-    - nomeUsuario: String
-    - senha: String
-    - email: String
-    - dataHoraCriacao: LocalDateTime
-    - dataHoraUltimoAcesso: LocalDateTime
-    - dataHoraUltimaAlteracao: LocalDateTime
-    - dataHoraExclusao: LocalDateTime
-    - situacao: String
-}
-
-abstract class Pessoa {
-    - id: Long
-    - nomeCompleto: String
-    - dataNascimento: Date
-    - genero: String
-    - estrangeiro: Boolean
-    - CPF: String
-    - RG: String
-    - outrosDocumentos: String
-    - telefoneCelular: String
-    - telefoneFixo: String
-    - endereco: Endereco
-    - escolaridade: Escolaridade
-    - orgaoInstituicaoEmpresa: OrgaoInstituicaoEmpresa
-}
-
-Usuario <|- Pessoa
-
-class Role {
-    - id: Long
-    - nome: String
-}
-
-'Classe associativa para relacionamento N:N entre Usuario e Role
-class UsuarioRole {
-    - id: Long
-    - usuario: Usuario
-    - role: Role
-}
-
-Usuario "1" -- "*" UsuarioRole
-Role "1" -- "*" UsuarioRole
-
-De acordo com as estratégias acima, o código da classe Usuario em Java abaixo será:
-*/
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -66,10 +14,8 @@ import java.util.Objects;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-// A classe Pessoa está herdando da classe Usuario, logo a anonotation @Inheritance é necessária
-@Inheritance(strategy = InheritanceType.JOINED)
 @MappedSuperclass
-public class Usuario implements Serializable {
+public abstract class Usuario implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id

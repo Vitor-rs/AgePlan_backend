@@ -48,9 +48,7 @@ public class EnderecoResource {
     public ResponseEntity<EnderecoDto> update(
             @PathVariable Long id,
             @RequestBody EnderecoDto dto) {
-
         dto = service.update(id, dto);
-
         return ResponseEntity.ok().body(dto);
     }
 
