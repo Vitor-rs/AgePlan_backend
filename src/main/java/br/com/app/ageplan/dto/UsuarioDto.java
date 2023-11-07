@@ -13,8 +13,6 @@ import java.time.LocalDateTime;
 public abstract class UsuarioDto implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
-
-    private Long id;
     String nomeUsuario;
     String senha;
     String email;
@@ -23,4 +21,5 @@ public abstract class UsuarioDto implements Serializable {
     LocalDateTime dataHoraUltimaAlteracao;
     LocalDateTime dataHoraExclusao;
     String situacao;
+    private Long id;
 }
